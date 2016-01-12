@@ -1,0 +1,25 @@
+\subsection*{Rationale for a Hawkes Conditional Poisson Procees}
+Bayesian learning is based on the accumulation of experience through multiple trials. Figure \ref{fig:fully_rational} shows a fully rational Bayesian learning starting with a uniform prior that an equal probability to every outcome. Starting from this uniform guess, a fully rational player builds a catalog of configuration and how they perform (i.e., the perceived probability that they are the true model). As learning occurs, new configurations are proposed, which rely on past configurations, presumably the most performing ones. The fully rational player has access to all configurations and their performance with the same perfect memory. 
+
+On the contrary, players with bounded rationality, e.g., human beings with limited memory and cognitive capabilities, can only withdraw a subset of the full catalog of configurations already tested. For instance, it is easier to recall a configuration which has been tested in the recent past, rather than long time ago.
+
+In both cases (fully rational and bounded rational), the probability that the new configuration will inherit from recently tested configurations is higher, compared to old configurations. The reason is that latter configurations incorporate information for former configurations (this should be the explanation for the decay $\sim t^{-0.5}$ observed in Figure \ref{fig:fully_rational}). 
+
+We posit that bounded rational players suffer from (i) their inability to perfectly integrate information in the new configurations the design and from (ii) the fact that they may have hard remembering all configurations, in particular those tested further in the past.
+
+The memory issue can be understood as a problem of influence with memory, which is perhaps long-range. In the latter case, the decay of influence of past events shall follow, e.g., a power law, which may at least in part explain the super small exponent $\alpha = 0.09$ observed (see Figure \ref{fig:convergence_humans}).
+
+Influence with memory, resp. long-range memory, may be modeled with conditional Poisson processes. Self-excited Hawkes conditional Poisson processes \cite{Hawkes_1974}, are particularly handy to account for exogenous shocks, perturbing a system, and triggering endogenous reactions by this system \cite{Crane_2008}. The Hawkes conditional Poisson process is defined by the intensity $I(t)$ of events at time $t$, given by
+\begin{equation}
+I(t)= \lambda(t) + \sum_{i | t_t<t}  f_i \phi(t-t_i)~,
+\label{eq:Hawkes}
+\end{equation}
+where $\{t_i, i=1, 2, ...\}$ are the timestamps of past events, $\lambda(t)$ is the exogenous rate of events, $f_{i}$ is the average fertility of events $i$ that quantifies the number of daughter (first generation) events, and $ \phi(t-t_i)$ is the memory kernel, which reflects the long-memory effects of task prioritization, and economy of time as a non storable resource \cite{Maillart_2011}. Here, the main exogenous shock is $\lambda(t_{0})$, with $t_{0}$ the first day of the Astro Hack Week. The second term of the right hand side of equation (\ref{eq:Hawkes}) represents the endogenous response to exogenous shocks (i.e., here, the response to the initial shock at $t_{0}$). 
+
+{\bf NB: I just copied paste from another paper. It may be that the model should be adapted, or we might have to borrow from other theories. I just provide it here as a starting point for discussion on possible dynamics occurring in relation with cognitive processes involving memory.}
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,24 @@
+\section{Rational (Bayesian or Frequentist) Learning}
+
+The basic idea is that the incentives in the game are such that for a Bayesian (rational) learner it is optimal to express her model as the maximum point of her posterior distribution after observing counts of joint outcomes of the $k$ binary variables. In other words, all of the information is in the frequency counts of the observed joint states of the system because in the time dimension the observations and payoffs are i.i.d. and all that matters are the signals which are in the form of observations of the states of the other variables (the covariates). 
+What this essentially means is that a rational Baysian learner will build a model that in the limit and in practice quite quickly converges to a normalized frequency count of the joint outcomes in the cross domain of the system under observation. Thus, a Bayesian learner learns at the same speed at which the normalized frequency counts of the system converge to their limiting distribution. The Central Limit Theorem determines the rate of convergence of normalized frequency counts to their long-term probabilities to be $\mathcal{O}( t^{-\frac{1}{2}})$, where $t$ is a time index determined by the entry of new information, or some constant times the entry of new information. So that if every 240 seconds a new piece of information is revealed, we can say that $t=240*s$, where $s$ is an index on each data point. The Bayesian learner then converges to the truth as 
+
+$\log((240*s)^{-\frac{1}{2}}) =-\frac{1}{2}(\log(240) + \log(s))$
+
+$= \beta_{rational} * (\log(240)+\log(s))$
+
+$= \alpha_{rational}+\beta_{rational}\log(s).$  
+
+Clearly, $\beta_{rational}=-\frac{1}{2}.$ 
+
+In general, $\alpha_{rational}$ is the logarithm of the period 1 measure:
+
+$\alpha_{rational}=\beta_{rational} * \log(\text{SF}*\gamma_{rational})$,
+
+where SF is the scaling factor measured in some time unit such as seconds (240 in the above case) and $\gamma_{rational}$ is a parameter determined by the prior.  Note that scale free here means that the speed of convergence does not depend on how often data is observed as long as it is observed at some constant interval. 
+
+Since there is no such thing as a "rational" prior, $\alpha_{rational}$ is completely arbitrary but in our framework it is forced to be negative as $e^{\alpha}$ here is the diversity or distance measure at time $1$ and those measures take on values in $[0, 1]$. The only constraint on $\alpha_{rational}$ then is that $e^{\alpha}\in [0, 1]$ and else nothing more can be said about it. A rational learner starts with a disposition that is arbitrarily far from or close to the truth and the log distance from the updated disposition to the limiting distribution converges at a rate $-\frac{1}{2}*\log(t)$.  Putting everything together, we have that 
+
+$E_{rational}(w_{i,t}) =e^{\alpha}*t^{-\frac{1}{2}},$
+
+where $E_{rational}$ is the expectation when the rational case is assumed of some distance measure $w(\cdot) \in [0,1]$ of the $i$s learner at time $t$ to the true limiting distribution, remembering that $t$ is a positive multiple (a time interval) of an index, $s$ on an indexed i.i.d data series. 

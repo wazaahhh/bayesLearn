@@ -1,0 +1,30 @@
+\section{Relation between Perfect and Human Bayesian Learning}
+It's quite simple but says the difference between perfect Bayesian learning ($BL$) and human learning ($HL$):
+
+\begin{equation}
+BL(t) \sim 1/t^{\alpha}~,~with~\alpha = 0.5\\
+HL(t) \sim 1/t^{\beta}~,~with~\beta \approx 0.1\\
+\label{BHL}
+\end{equation}
+ 
+Hence, 
+\begin{equation}
+HL(t) \sim BL(t)^{\gamma}~,~with~\gamma \approx 1/5.
+\end{equation}
+
+One shall also consider the initial conditions: what are the performances at $t=0$ for $BL$ and $HL$ in both simple and complex cases $\rightarrow$ this super important because it's the only visible difference between the 2 games (simple and complex)!
+
+So the $\gamma \approx 1/5$ is a measure of the discrepancy between a perfect learner and a human learner (on average). As the volatility is high, we shall however expect better or worse human learners compared to this average, but in general, time performance may converge in the following way,
+
+\begin{equation}
+Time~Performance = \frac{\Delta Distance(t)}{\Delta t} \rightarrow 0~as~t\rightarrow \infty,
+\end{equation}
+
+which is consistent with empirical results given by \ref{BHL}.
+
+
+  
+  
+  
+  
+  
