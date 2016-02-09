@@ -3,45 +3,34 @@ import numpy as np
 from math import log, sqrt, exp
 from numpy import array as arr
 
-def MakeMixture(Pr1, Pr2, lamb=0.5):
+def is_nan(obj):
+    if isinstance(obj, float) and np.isnan(obj):
+        return True
+    else return False
+
+def MakeMixture(one, two, lamb=0.5):
     """
     if the order of names is different between to different distributions, the probability vectors must be first reordered
-    Pr1, Pr2 are two probability distributions, either implemented as dictionaries or as ordered lists
+    Pr1, Pr2 are two probability distributions, implemented as simple ordered lists
     """
     
-    if (type(Pr1)==type(Pr2)==dict):
-
-        if set(Pr1.keys())==set(Pr2.keys()):
-            probs=[(Pr1[key], Pr2[key]) for key in Pr1.keys()]
-            return dict(zip(Pr1.keys(), [(lamb*a+(1-lamb)*b) for a, b in probs])) #mixing the two probability distributions
-        else: 
-            raise IndexError
-    elif (type(Pr1)==type(Pr2)==list):
-        if (len(Pr1)==len(Pr2)):
-            return [(lamb*a+(1-lamb)*b) for a, b in zip(Pr1, Pr2)]
-        else: 
-            raise IndexError
+    if (len(one)==len(two)):
+        return [(lamb*a+(1-lamb)*b) for a, b in zip(one, two)]
+    else: 
+        raise IndexError
 
 def KL_divergence(first, second):
     """ 
-    Compute KL divergence of two lists or dictionaries.
+    Compute KL divergence of two probability vectors, expressed as python lists.
     The arguments are called first and second because the 
     KL_divergence is assymetric, so that KL_divergence(first, second)!=KL_divergence(second, first)
     """
-
-    if (type(first)==type(second)==dict):
-        if (set(first.keys())==set(second.keys())):
-            keys=first.keys()
-            probs1=[float(first[key])/sum(first.values()) for key in keys] 
-            probs2=[float(second[key])/sum(second.values()) for key in keys]
-        else: 
-            raise IndexError
-    elif (type(first)==type(second)==list):
-        if (len(first)==len(second)):
-            probs1=[float(item)/sum(first) for item in first]
-            probs2=[float(item)/sum(second) for item in second]
-        else: 
-            raise IndexError
+    
+    if (len(first)==len(second)):
+        probs1=[float(item)/sum(first) for item in first]
+        probs2=[float(item)/sum(second) for item in second]
+    else: 
+        raise IndexError
     try:
         return sum(p * log((p /q)) for p, q in zip(probs1, probs2) if p != 0.0 or p != 0)
     except ZeroDivisionError:
@@ -59,6 +48,10 @@ def JensenShannonDivergence(g, h):
     JSD=lamb * KL_divergence(g, mix) + (1-lamb) * KL_divergence(h, mix)
     return JSD
 
+def Distance(a, b):
+    if is_nan(a) or is_nan(b): return np.nan
+
+    return sqrt(JensenShannonDivergence(a, b))
 
 def Entropy(pr):
     try:
