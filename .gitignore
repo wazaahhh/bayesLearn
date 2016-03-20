@@ -1,0 +1,14 @@
+*synctex.gz
+*eps-converted-to.pdf
+
+*.bbl
+
+*.aux
+
+*.blg
+
+*.log
+
+manuscript/main.synctex.gz
+
+manuscript/main.pdf

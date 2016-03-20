@@ -1,5 +1,5 @@
 \section{Introduction}
-From financial stability to the stability of democracies, beliefs play a central role in our explanation of many phenomena. In the social sciences, these beliefs are often conceptualized as probabilistic assessments over states of the world.  However, they are derived from coherent belief systems people hold in their minds regarding how the world works as supported by recent work in cognitive science \cite{Lombrozo06, Anderson09}.  How do humans learn in simple and in complex systems?  How efficiently do they explore the space of possible beliefs and how closely is the direction of exploration tied to experience?  
+From financial stability to the stability of democracies, beliefs play a central role in our explanation of many phenomena. In the social sciences, these beliefs are often conceptualized as probabilistic assessments over states of the world.  However, they are derived from coherent belief systems people hold in their minds regarding how the world works as supported by recent work in cognitive science \cite{lombrozo2006structure, anderson1990cognitive}.  How do humans learn in simple and in complex systems?  How efficiently do they explore the space of possible beliefs and how closely is the direction of exploration tied to experience?  
 
 Our work presents new experimental results on the rate at which people learn in more or less complex environments. We find that the rate of learning is much slower than it would be if learners were Bayesians as had been proposed in older economic theories (citations needed).
 
@@ -11,11 +11,16 @@ The data used in this work come from an experiment that we ran using an innovati
 
 As can be seen in Figure \ref{fig:xx} the distance between a person's evolving belief system about some physical system and the long-run absorbing distribution, which we interpret as a performance score, decays with time in a very specific way:
 
+\begin{equation}
+\label{ }
 d(belief_{i, t}, absorbing distribution) = \alpha*t^{-\beta_i}
+\end{equation}
+
+
 
 The functional form of human learning in the context of our experiment, then, is the same as for the Bayesian learner (the red line in the figure), but the decay rate, $\beta$, of a human learner is much smaller than that of a Bayesian. 
 \vspace{1cm}
-\begin{figure}[h
+\begin{figure}[h]
 \label{xx}
 \centerline{\epsfig{figure=../figures/histogram.eps,angle=0,width=14cm,scale=1}}
 \caption{The average distance, as measured by the Jensen Shannon Divergence, between a person's model and the distribution from which the observations are drawn on which all models are based.}
