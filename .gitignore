@@ -12,3 +12,9 @@
 manuscript/main.synctex.gz
 
 manuscript/main.pdf
+
+*.DS_Store
+
+manuscript/.DS_Store
+
+manuscript/.DS_Store
