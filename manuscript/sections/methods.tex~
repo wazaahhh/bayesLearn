@@ -1,0 +1,39 @@
+\section{The Experiment} 
+
+Our data comes from an experiment which we conducted at Columbia University's Social Science laboratory.  Participants were given a graphical environment in which they could express their exact believes with respect to the causal structure and probabilistic relationships between 3 or 4 related binary variables, depending on treatment.  Participants were compensated according to their predictions and their predictions' congruence with a series of realizations.  Participants were enabled to dynamically update their models.   The incentives to make good predictions were determined according to an incentive scheme that is standard in experimental economics.  
+
+\section{Experimental Design and Implementation}
+
+\subsection{Causal Reasoning about a set of Binary Variables}
+
+Here, we describe and informally define the kinds of systems that experimental participants reasoned about as they participated in our experiment on causal reasoning. 
+
+\subsubsection{The noisy-or operator \citep{Pearl88}}
+
+For systems with only binary variables we might think of causation in the following way as suggested by Judea Pearl in 1988.  If causation only involves 2 variables, say $A$ and $B$, where $A$ has a positive causal effect on $B$, then things are simple:
+
+$P(B = 1 | A = 1) = p$, where $p \in [0, 1]$ and 0 otherwise.  That is, if the cause is present, $B=1$ follows with probability $p$, else it never happens, as there is only one possible cause for $B$ to assume the value $1$ and that is for $A$ to assume the value $1$. Note that in reverse this will mean $P(A=1|B=1)=1$. $B$ can only assume the value $1$ when $A$ is $1$ and thus observing that $B$ is $1$ tells us that $A$ must be $1$ as well. The cookies are gone and there was only one person here who could have eaten them! 
+
+Other definitions have it that a causal effect of A on B is positive if $P(B = 1 | A = 1) > P(B = 1 | A = 0)$ and $P(B = 0 | A = 1) < P(B = 0 | A = 0)$, but that suggests that there are some ommitted causes of the event $B=1$. 
+
+Keeping with Judea Pearl's 1986 reasoning, we ask how best to think about causation when there are two binary causes, $B$ and $C$ and one binary outcome. We then generalize this idea. 
+
+The naive way to pose that would be as:
+
+$P(A=1|B=b, C=c) = \pi_B*b + \pi_C*c$, 
+
+where $b, c \in \{1, 0\}$ are the values taken on by the variables $B$ and $C$ and $\pi_B$, $\pi_C \in [0,1]$ are the causal effects of $B$ on $A$ and $C$ on $A$ respectively. But the problem with this formulation -- as Pearl pointed out -- is that, since $P(A=1|B=b, C=c)$ is a probability, as such it must take a value between $0$ and $1$.
+
+The constraint $0< \pi_B*b + \pi_C*c <1$ induces a dependence between the causal effects $\pi_B$ and $\pi_C$ that we had not explicitly intended in our theory, which posed that $B$ and $C$ each independently cause $A$. Our implicit theory takes the following explicit form \citep{Pearl88}:
+
+$P(A=1|B=b, C=c) = 1-(1-\pi_B)^b(1-\pi_C)^c$.
+
+Pearl called it the noisy-OR operator because, supposing $\pi_B=\pi_C=1$, $A$ will be $1$ exactly whenever $B=1$, $C=1$, or both.  When $\pi_B, \pi_C \in (0, 1)$, the OR operator is noisy. The noisy-OR operator accommodates negative causation and any finite number of causes: 
+
+$P(A=1|B=b, C=c, D=d) = 1-(1-\pi_B)^b(1-\pi_C)^{1-c}(1-\pi_D)^d$,
+
+where the exponant, $1-c$ in the term $(1-\pi_C)^{1-c}$ means that the variable $C$ exerts a negative causal influence on the variable $A$.
+
+For a set of binary variables, then, this simple system defines a causal grammar that allows us to construct almost arbitrary causal structures relating the members of the set.  The only constraint is that one may not propose a model with causal cycles. Such models are logically incoherent, unless we allow for dynamics which we don't in this experiment. Here I'm going to restrict myself to cases where there are no dynamics, there is just a process that repeats in time, like the proverbial coin flip, but with internal structure.   
+
+
