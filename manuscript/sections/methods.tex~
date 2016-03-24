@@ -34,6 +34,37 @@ $P(A=1|B=b, C=c, D=d) = 1-(1-\pi_B)^b(1-\pi_C)^{1-c}(1-\pi_D)^d$,
 
 where the exponant, $1-c$ in the term $(1-\pi_C)^{1-c}$ means that the variable $C$ exerts a negative causal influence on the variable $A$.
 
-For a set of binary variables, then, this simple system defines a causal grammar that allows us to construct almost arbitrary causal structures relating the members of the set.  The only constraint is that one may not propose a model with causal cycles. Such models are logically incoherent, unless we allow for dynamics which we don't in this experiment. Here I'm going to restrict myself to cases where there are no dynamics, there is just a process that repeats in time, like the proverbial coin flip, but with internal structure.   
+For a set of binary variables, then, this simple system defines a causal grammar that allows us to construct almost arbitrary causal structures relating the members of the set.  The only constraint is that one may not propose a model with causal cycles. Such models are logically incoherent, unless we allow for dynamics which we don't in this experiment. Here we're going to restrict ourselves to cases where there are no dynamics, there is just a process that repeats in time, like the proverbial coin flip, but with more or less intricate (complex) internal structures.
 
+\subsection{Experimental Treatments}
+
+Data from such systems can also be simulated and presented to people so that they may backward engineer the causal structures that generated this data. That is, experimental participants see data and build causal models, seeking to understand how the data was produced and to make predictions of future observations. 
+
+To make things more relatable, we labeled the variables with names from economics, as these seem to relate to many people: "Interest Rate (IR)", "Financial Sector (FS)", "industry (ID)" and "Consumer Spending (CS)". 
+
+%As a side note, it would be interesting so see how labeling could affect learning and diversity.  It can for example be postulated and I find it likely that it is hard for certain people to learn certain relationships because of the meaning that is attached to labels.  Note that I did not include "Taxes" as a variable lable, as this label is a likely candidate to induce hard learning.    
+
+We thus simulated from the joint distributions of two such systems, one simpler and the other more complex and presented people with the data and the modeling tools to try to learn the causal relationships and parameter values in these systems. The simpler system has three variables: "Interest Rate (IR)", "Financial Sector (FS)" and "Industry (ID)", where the "Interest Rate" has a negative effect on the "Industry" and the "Financial Sector" has a positive effect on the "Industry" (our somewhat arbitrary settings).
+
+For the simple treatment, the data that the participants observed were generated in the following way: a variable was chosen at random from the system's variables to be the current period's "betting bariable". The value of this variable was hidden from the participants until the end of the period. Participants were incentivised to predict the value of this variable. Next, the value of the "interest Rate" variable was drawn; "H", with probability $0.5$ and "L: with probability $0.5$, followed by the value of the "Financial Sector" variable, with identical probabilities. Lastly, the value of the "Industry" variable was drawn, according to the conditional probability:  
+
+$P(ID=1|FS=fs, IR=ir) = 1-(1-\pi_{FS})^{fs}(1-\pi_{IR})^{1-ir}$, where $\pi_{FS}=\pi_{IR}=0.5$. 
+
+The more complex system had four variables labelled "Interest Rate (IR)", "Financial Sector (FS)", "Industry (ID)" and "Consumer Spending (CS)", where as before the "Interest Rate" has a negative effect on the "Industry" and the "Financial Sector" has a positive effect on the "Industry". In addition, in this system the "Industry" and "Interest Rate" also affect "Consumer Spending". "Industry" positively and the "Interest Rate" negatively.  Please do not hold us accountable for those choices, we will not defend these particular configurations in any way.
+
+The joint distributions of Bayesian Belief Nets can be caculated as the products of the conditional probabilities and the marginal probabilities, as follows. For any number of related variables, $X_1, \ldots, X_n$, their joint probability can be calculated as:
+
+$P(x_1, \ldots, x_n) = P(x_1 | x_2, \ldots, x_n)*P(x_2 | x_3, \ldots, x_n)*\cdots*P(x_{n-1} |x_n)*P(x_n)$.
+\\
+
+$P(x_1, \ldots, x_n) = P(x_1 | x_2, \ldots, x_n)*P(x_2 | x_3, \ldots, x_n)*\cdots*P(x_{n-1} |x_n)*P(x_n)$.
+\\
+
+For example, remembering that $P(ID=1|FS=fs, IR=ir) = 1-(1-\pi_{FS})^{fs}*(1-\pi_{IR})^{1-ir}$, where $\pi_{FS}=\pi_{IR}=0.5$, for the simple treatment, the joint outcome $FS=H, IR=H, ID=H$ has probability:
+\\
+
+$P(FS=H, IR=H, ID=H) = P(ID=1|FS=H, IR=H)*P(FS=H)*P(IR=H)=\left(1-(1-\pi_{FS})^{1}*(1-\pi_{IR})^{1-1}\right)*0.5^2 =0.125.$  
+\\
+
+A frequentist, might simply count membership of the joint buckets and build a model that matches the percentages. Updating her beliefs in this context of a repeating process, a bayesian could essentially do the same thing by comparing members of the dirichlet distribution class by obeserving, updating and finding the maximum of the posterior distribution of the parameters, known as the pseudo counts. This maximum turns out to approach the $2^k$ dimensional value of the bin counts. Likewise, all conditional distributions could be calculated in this way, but cognitive scientists and computer scientists have recently found this to be computationally more expensive than necessary \citep{Griffith08, Koller03}.  They suggest that instead of calculating $2^k$ parameters for the joint distribution of $k$ binary variables, people and computers should build structural models, where they can update their beliefs for a much reduced number of parameters and obtain the same results. For the model that we used as the simple treatment process, for example, if one has the right structure and the correct idea that $P(ID=1|FS=0, IR=1)=0$, there are four parameters to form beliefs about: $\pi_{FS}, \pi_{IR}, P(FS), P(IR)$. But perhaps, one doesn't see causation in that way and then there are $5$ parameters.  The full joint distribution has eight parameters.  There are thus less parameters to estimate if a causal theory is postulated. The benefit of thinking structurally will increase as the number of variables gets large because most often, the number of causal relationships (structural parameters) increases linearly in the number of variables, $k$, whereas the parameters of the joint distribution increases exactly by $2^k$.  At most, each variable that is added, affects every variable that is already there and then the number of causal arrows grows with $k$ as $k(1-k)$. In light of this, it seems evident that people should have a harder time guessing the correct structure and estimating the correct structural parameters when the system is complex than when it is simple. This should lead their models to be more diverse and less accurate in the complex case. 
 
