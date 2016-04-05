@@ -18,3 +18,7 @@ manuscript/main.pdf
 manuscript/.DS_Store
 
 manuscript/.DS_Store
+
+*.csv
+
+*.h5
