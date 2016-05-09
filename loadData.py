@@ -2,13 +2,13 @@ import pandas as pd
 from Entro import Distance
 import jsonpickle as jp
 import numpy as np
-
+import csv
 simple = pd.read_pickle("simple_models")
 complex = pd.read_pickle("complex_models")
 
-print simple[simple.keys()[0]][400:403]
+#print simple[simple.keys()[0]][400:403]
 simple_score = {}
-
+complex_score = {}
 with open('simpleG', 'r') as f:
     simpleG = jp.decode(f.read())
 
@@ -20,13 +20,15 @@ with open('complexG', 'r') as f:
 for key in simple:
 
     simple_score[key] = [Distance(simpleG["probs"], t) for t in simple[key]]
-"""
-for key in simple:
-    print simple[key][6]
-"""
-#key = simple.keys()[6]
 
-#print simple_score[key]
+for key in complex:
+    complex_score[key] = [Distance(complexG["probs"], t) for t in complex[key]]
+
+key = complex.keys()[6]
+
+#print complex_score[key]
+complex_distances = pd.DataFrame(complex_score)
+complex_distances.to_csv("complex_distances.csv")    
 
 simple_change_count_pm = {}
 
@@ -55,7 +57,7 @@ std_count = np.std(np.array(avrg_count), 0)
 
 avrg_count = np.mean(np.array(avrg_count), 0)
 
-print std_count
+#print std_count
 
 
 
