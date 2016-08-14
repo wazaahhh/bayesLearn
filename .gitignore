@@ -15,10 +15,6 @@ manuscript/main.pdf
 
 *.DS_Store
 
-manuscript/.DS_Store
-
-manuscript/.DS_Store
-
 *.csv
 
 *.h5
@@ -28,3 +24,5 @@ manuscript/.DS_Store
 *.pyc
 
 *.py~
+
+manuscript/.DS_Store
