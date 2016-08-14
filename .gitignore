@@ -24,3 +24,7 @@ manuscript/.DS_Store
 *.h5
 
 *.py~
+
+*.pyc
+
+*.py~
