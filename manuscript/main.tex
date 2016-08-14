@@ -11,10 +11,8 @@
 \usepackage{indentfirst}
 %\usepackage{cite}
 
-
-
 \begin{document}
-\title{Learning Complex Systems: Exploitation vs. Exploration}
+\title{Patterns of Human Learning in Complex Systems}
 
 
 \author{Johannes Castner}
@@ -32,7 +30,7 @@ San Francisco, USA}
 
 
 \begin{abstract}
-\vspace{1cm}
+%\vspace{1cm}
 \input{sections/abstract}
 \end{abstract}
 
@@ -41,11 +39,26 @@ San Francisco, USA}
 \input{sections/intro}
 \input{sections/background}
 
-\input{sections/methods}
-
+\input{sections/problem_formulation}
 
 \bibliographystyle{apsrev4-1}
 \bibliography{bib/references}
+
+\clearpage
+\input{sections/figures}
+
+\clearpage
+%\input{sections/SI}
+
+\renewcommand\thesection{\alph{section}}
+\setcounter{section}{0}
+
+\begin{center}
+{\Large Supplementary Materials}
+\vspace{3cm}
+\end{center}
+
+\input{sections/methods}
 
 \end{document}
 
