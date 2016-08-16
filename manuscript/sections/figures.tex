@@ -1,24 +1,38 @@
 \begin{center}
 {\Large {\bf Figures}}
-\vspace{3cm}
+\vspace{1.5cm}
 \end{center}
-
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=15cm]{figures/ConvergenceMeans.eps}
-\caption{Decay of the Jensen-Shannon (JS) Divergence (\ref{JS-divergence}) between models proposed by participants and the true model. The decays are averaged (median or mean?) over all participants in 3-node {\it simple} and 4-node {\it complex} cases (resp. panels {\bf a} and {\bf b}). Both decay follow the same power law decay (\ref{power_law_decay}).}
+\includegraphics[width=12cm]{figures/decay_simple_complex.eps}
+\caption{\footnotesize Decay of the Jensen-Shannon (JS) Distance (\ref{JS-distance}) between models proposed by participants and the true model over time for the 3-node (simple) and 4-node (complex) Bayesian network treatments (resp. in blue and red). The colored areas show the standard deviation. The decays are averaged (mean) over all participants for each treatment. Both treatments follow similar extremely slow power law decay (\ref{power_law_decay}), yet with different exponents: $\alpha = 0.1$ ($p < 0.001$, $R = -0.92$) for the simple Bayesian network treatment and $\alpha = 0.07$ ($p < 0.001$, $R = -0.94$) for the complex Bayesian treatment. The grey area on the left shows the 5-minute {\it warm up} period during which participants get used to the interface. In both treatments, participants elaborate initial Bayesian Net models with $JSD \approx 0.6$, and there is a phase associated with counter-performance (during which the JS Distance increases). This phase is however much shorter for the simple Bayes Net (peak at $t \approx1$ minute) compared to the complex Bayes Net (peak at $t \approx 4.5$ minutes) after which the JS-distance actually starts to decay.}
 \label{fig:decay}
 \end{center}
 \end{figure}
 
 \begin{figure}[h!]
 \begin{center}
-%\includegraphics[width=15cm]{figures/ConvergenceMeans.eps}
-\caption{Distribution of jump sizes}
+\includegraphics[width=15cm]{figures/pdf_JSD.eps}
+\caption{{\bf a.} Probability density function (un-normalized) of $\Delta(JS-distance)$ ($\Delta JSD$) between 2 consecutive changes (jump sizes). The negative $\Delta(JS-distance) < 0$ stands for improvement (i.e., the goal is to reduce the $JS-distance$). On the contrary, the $\Delta(JS-distance) >  0$ happens when a participant comes up with a BayesNet model which is further from the true model, compared to the previous attempt. The distribution is heavy-tailed on both sides (c.f., {\bf b.} and {\bf c.}), almost power law tail, yet with some particularities: For $\Delta JSD < 0$, the probability density function may be a {\bf log-normal}. For $\Delta JSD > 0$, an extra ``outliers" regime is present (grey shade rectangle). Also, $\Delta JSD > 0$ is more heavy-tailed compared to $\Delta JSD < 0$ (see Table \ref{pwlaw_fits}). The {\it simple} and {\it complex} treatments (resp. blue and red dots) look similar, yet with sligtly different exponents (see again Table \ref{pwlaw_fits}). Interestingly, the median in both simple and complex cases is very close to zero [$median(pdf) < 0.001$], which means that there is an equal probability that the participant makes a negative or a positive change.}
 \label{fig:jump_sizes}
 \end{center}
 \end{figure}
+
+\begin{table}
+  \centering 
+  \begin{tabular}{|c|c|c|c|c|}
+	\hline
+% after \\ : \hline or \cline{col1-col2} \cline{col3-col4} ...
+   treatment & exponent $\alpha_{-}$~&~$~p-value~$~& exponent $~\alpha_{+}~$ & $~p-value~$~\\
+   \hline
+  simple  & -1.13(5) & 0.000 &  -1.32(6) & 0.000\\
+  complex &  -1.23(4) & 0.000 & -1.39(4) & 0.000\\
+\hline
+\end{tabular}
+  \caption{Power law fits obtained by OLS regression of the log binned probability density function (come up with a better explanation or a better method). A comparison with log-normal is desirable because for the stochastic process formulation.}
+  \label{pwlaw_fits}
+\end{table}
 
 \begin{figure}[h!]
 \begin{center}
