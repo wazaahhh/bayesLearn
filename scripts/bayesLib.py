@@ -1,15 +1,18 @@
 import sys
-import pandas
+import pandas as pd
 import csv
 import numpy as np
 import pylab as pl
+import jsonpickle as jp
 from scipy.stats import linregress
 from scipy import stats  as S
+from Entro import Distance
 
 sys.path.append("/Users/maithoma/work/python/")
 from tm_python_lib import *
 from fitting_tools import *
 
+dir = "/Users/maithoma/github/bayesLearn/scripts/"
 
 
 def rankorder(x):
@@ -35,7 +38,24 @@ def findFirstLastValue(df):
 
 
 
+def loadDistances(treatment="simple",remove_duplicates=False):
 
+
+	data_dic = pd.read_pickle(dir + "Data/%s_models"%treatment)
+	dic = {}
+
+	with open(dir + 'Data/%sG'%treatment, 'r') as f:
+		G = jp.decode(f.read())
+
+
+	for key in data_dic:
+		dic[key] = np.array([Distance(G["probs"], t) for t in data_dic[key]])
+		index = []
+		if remove_duplicates:
+			index = np.argwhere(np.diff(dic[key])==0) + 1
+
+		dic[key][index] = np.nan
+	return pd.DataFrame(dic)
 
 
 
