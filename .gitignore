@@ -32,3 +32,5 @@ manuscript/.DS_Store
 figures/.DS_Store
 
 .DS_Store
+
+*.pyc
