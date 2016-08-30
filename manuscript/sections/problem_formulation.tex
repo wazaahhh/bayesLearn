@@ -1,5 +1,97 @@
 \section{Problem Formulation}
 
+\subsection{Intuition}
+Random search processes occur in many areas, from the foraging behaviorof bacteria and animals \cite{}, to human mobility \cite{}, to computer search and optimization algorithms \cite{}.  When searching for solutions to outstanding problems, humans must come up with innovative solutions, which involve random search (e.g., gathering information, etc), along with the consolidation of past and current experience. 
+
+Here, we show how people go through the resolution of a complicated problem, starting from no knowledge through L'evy random search, involving synthesizing current knowledge versus exploring out-of-the box (see Figure \ref{fig:schematic}). We then measure how this process leads to convergence, albeit very slow convergence, to the solution.  
+
+%{\bf huge mistake?:  the displacement is not necessarily the path to a better solution. JS-Distance is a by-product of displacement (of the search process) $\rightarrow$ JSD is the objective function NOT the process} 
+\subsection{Distributions of JS-distance and Waiting Times}
+
+
+jump size $\Delta r$ and waiting time $\Delta t$
+
+\begin{equation}
+P(R > \Delta r) \sim |\Delta r|^{-\alpha}, ~~with~~\alpha \approx 0.1,
+\end{equation}
+
+and
+
+\begin{equation}
+P(T > \Delta t) \sim |\Delta t|^{-\beta}, ~~ with~~  1< \beta < 2
+\end{equation}
+
+\subsection{Continuous Time Random Walk (CTRW)}
+
+continuous-time random walk (CTRW)  $\rightarrow$ is a generalization of a random walk where the wandering particle waits for a random time between jumps. It is a stochastic jump process with arbitrary distributions of jump lengths and waiting times.[1][2][3] More generally it can be seen to be a special case of a Markov renewal process.
+
+\begin{equation}
+\psi(\Delta r,\Delta t)=P(\Delta r)P(\Delta t)
+\end{equation}
+
+with $P(\Delta r)$ and $P(\Delta t)$ are not dependent.
+
+{\bf Jump length pdf :}
+\begin{equation}
+\lambda(\Delta r) = \int_0^{\infty} dt \psi(\Delta r,\Delta t)
+\end{equation}
+
+{\bf Waiting Time pdf :}
+\begin{equation}
+w(\Delta t) = \int_{-\infty}^{\infty} dx \psi(\Delta r,\Delta t)
+\end{equation}
+
+Characteristic waiting time:
+\begin{equation}
+T \int_0^{\infty} dt w(t)t
+\end{equation}
+
+
+Characteristic waiting time:
+\begin{equation}
+\Sigma^2 = \int_{-\infty}^{\infty} dx \lambda(x) x^2
+\end{equation}
+
+
+\subsection{anisotropy}
+The propagator is anisotropic: There is equal chance that a jump will be negative or positive. However, the distribution of jump size is different: both are power law, but with different exponents.
+
+
+
+
+
+isotropy :
+\begin{equation}
+W_j (t+\Delta t) = a W_{j-1}(t) + b W_{j+1}(t)
+\end{equation}
+
+with $a=b=1/2$. In case of anisotropy $\rightarrow  a \neq b$.
+
+
+\subsection{Number of distinct locations / Visitation frequency:}
+
+(A) The number of distinct locations $S(t)$ visited by a randomlymoving object is expected to follow:
+
+
+\begin{equation}
+S(t) \sim t^{\mu}
+\end{equation}
+
+
+where $\mu = 1$ for LŽvy flights [24] and $\mu = \beta$ for CTRW. {\bf [Here, it is unclear what visiting a distinct location means ]}
+The probability $f$ of a user to visit a given location is expected to be asymptotically uniforma ($f\sim const.$) for both LŽvy flights and CTRWs. In contrast, the visitation patterns of humans is rather uneven, so that the frequency $f$ of the $k$th  most visited location follows
+
+\begin{equation}
+f_k ~k^{-\zeta}
+\end{equation}
+
+where $\zeta \approx 1.2 \pm 0.1$ (babarasi paper).
+
+\subsection{Ultra Slow Diffusion}
+
+The CTRW model predicts that the mean square displacement (MSD) asymptotically follows $\langle \Delta x^2 (t) \rangle \sim t^{\nu}$ with $\nu = 2\beta /\alpha$
+
+
 
 \subsection{Jensen-Shannon Distance}
 
