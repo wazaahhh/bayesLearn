@@ -26,7 +26,7 @@ The simple system has $k=3$ binary variables and its maximum entropy (random typ
 
 \begin{figure}
 \noindent\makebox[\textwidth]{%      
-        \includegraphics[width=1\textwidth]{figures/simplejoint.png}}
+        \includegraphics[width=1\textwidth]{simplejoint.png}}
 \caption{The limiting distribution of the simple treatment and an example frequency distribution pertaining to 400 random realizations.}
 \label{fig:simplejoint} 
 \end{figure}
