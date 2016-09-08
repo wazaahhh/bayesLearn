@@ -14,6 +14,25 @@ from fitting_tools import *
 
 dir = "/Users/maithoma/github/bayesLearn/scripts/"
 
+fig_width_pt = 420.0  # Get this from LaTeX using \showthe\columnwidth
+inches_per_pt = 1.0 / 72.27  # Convert pt to inch
+golden_mean = (np.sqrt(5) - 1.0) / 2.0  # Aesthetic ratio
+fig_width = fig_width_pt * inches_per_pt  # width in inches
+fig_height = fig_width  # *golden_mean      # height in inches
+fig_size = [fig_width, fig_height]
+
+params = {'backend': 'ps',
+          'axes.labelsize': 25,
+          'text.fontsize': 25,
+          'legend.fontsize': 18,
+          #'title.fontsize': 20,
+          'xtick.labelsize': 20,
+          'ytick.labelsize': 20,
+          'text.usetex': False,
+          'figure.figsize': fig_size}
+pl.rcParams.update(params)
+
+
 
 def rankorder(x):
 	x1 = list(np.sort(x))
@@ -38,24 +57,25 @@ def findFirstLastValue(df):
 
 
 
-def loadDistances(treatment="simple",remove_duplicates=False):
+def loadDistances(treatment="simple",distanceType="jsd",remove_duplicates=False):
+    data_dic = pd.read_pickle(dir + "Data/%s_models"%treatment)
+    dic = {}
 
+    with open(dir + 'Data/%sG'%treatment, 'r') as f:
+        G = jp.decode(f.read())
 
-	data_dic = pd.read_pickle(dir + "Data/%s_models"%treatment)
-	dic = {}
+    for key in data_dic:
+        if distanceType == 'jsd':
+            dic[key] = np.array([Distance(G["probs"], t) for t in data_dic[key]])
+        elif distanceType == 'sqrt':
+            dic[key] = np.array([np.sqrt(np.sum((np.array(t) - np.array(G["probs"]))**2)) for t in data_dic[key]])
 
-	with open(dir + 'Data/%sG'%treatment, 'r') as f:
-		G = jp.decode(f.read())
+    index = []
+    if remove_duplicates:
+        index = np.argwhere(np.diff(dic[key])==0) + 1
 
-
-	for key in data_dic:
-		dic[key] = np.array([Distance(G["probs"], t) for t in data_dic[key]])
-		index = []
-		if remove_duplicates:
-			index = np.argwhere(np.diff(dic[key])==0) + 1
-
-		dic[key][index] = np.nan
-	return pd.DataFrame(dic)
+    dic[key][index] = np.nan
+    return pd.DataFrame(dic)
 
 
 
