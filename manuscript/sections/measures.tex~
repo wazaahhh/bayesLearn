@@ -1,6 +1,12 @@
 \section{Measures of Cognitive Distance}
 
-In this section, we will introduce various measures.  We use the square root of a measure called the Jensen Shannon Divergence as our measure of cognitive distance, but in order to understand the usefulness and reason behind this measure we need to first introduce some preliminary measures which the Jensen-Shannon Divergence builds on. 
+In this section, we will introduce various measures.  We use the square root of a measure called the Jensen Shannon Divergence as our measure of cognitive distance (CD). The performance score is then
+
+\begin{equation}
+S = 1 - CD.
+\end{equation}
+
+In order to understand the usefulness and reason behind this measure this section introduces some preliminary measures which the Jensen-Shannon Divergence builds on and then formally defines our measure of cognitive distance.    
   
 \subsection{The Shannon Entropy}
 
@@ -26,7 +32,7 @@ The simple system has $k=3$ binary variables and its maximum entropy (random typ
 
 \begin{figure}
 \noindent\makebox[\textwidth]{%      
-        \includegraphics[width=1\textwidth]{simplejoint.png}}
+        \includegraphics[width=1\textwidth]{figures/simplejoint.png}}
 \caption{The limiting distribution of the simple treatment and an example frequency distribution pertaining to 400 random realizations.}
 \label{fig:simplejoint} 
 \end{figure}

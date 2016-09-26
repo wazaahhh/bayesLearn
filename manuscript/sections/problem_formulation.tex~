@@ -8,6 +8,13 @@ Here, we show how people go through the resolution of a complicated problem, sta
 
 %{\bf huge mistake?:  the displacement is not necessarily the path to a better solution. JS-Distance is a by-product of displacement (of the search process) $\rightarrow$ JSD is the objective function NOT the process} 
 
+
+
+
+
+
+
+
 \subsection{Jensen-Shannon Distance}
 
 
@@ -110,8 +117,8 @@ S(t) \sim t^{\mu}
 \end{equation}
 
 
-where $\mu = 1$ for Lﾂ思y flights [24] and $\mu = \beta$ for CTRW. {\bf [Here, it is unclear what visiting a distinct location means ]}
-The probability $f$ of a user to visit a given location is expected to be asymptotically uniforma ($f\sim const.$) for both Lﾂ思y flights and CTRWs. In contrast, the visitation patterns of humans is rather uneven, so that the frequency $f$ of the $k$th  most visited location follows
+where $\mu = 1$ for L思y flights [24] and $\mu = \beta$ for CTRW. {\bf [Here, it is unclear what visiting a distinct location means ]}
+The probability $f$ of a user to visit a given location is expected to be asymptotically uniforma ($f\sim const.$) for both L思y flights and CTRWs. In contrast, the visitation patterns of humans is rather uneven, so that the frequency $f$ of the $k$th  most visited location follows
 
 \begin{equation}
 f_k ~k^{-\zeta}
