@@ -11,6 +11,7 @@ from Entro import Distance
 sys.path.append("/Users/maithoma/work/python/")
 from tm_python_lib import *
 from fitting_tools import *
+import adaptive_kernel_tom as AK
 
 dir = "/Users/maithoma/github/bayesLearn/scripts/"
 

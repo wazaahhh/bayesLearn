@@ -11,9 +11,14 @@
 \usepackage{indentfirst}
 %\usepackage{cite}
 
-\begin{document}
-\title{Patterns of Human Learning in Complex Systems}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\ba}{\begin{eqnarray}}
+\newcommand{\ea}{\end{eqnarray}}
 
+\begin{document}
+%\title{Patterns of Human Learning in Complex Systems}
+\title{Do modern humans solve problems with \\ algorithms used by hunter-gatherers in search for food?}
 
 \author{Johannes Castner}
 \email{jcastner@ebay.com}
@@ -52,7 +57,8 @@ San Francisco, USA}
 \clearpage
 %\input{sections/SI}
 
-\renewcommand\thesection{\alph{section}}
+%\renewcommand\thesection{\Alph{section}}
+\renewcommand\thesection{S\arabic{section}}
 \setcounter{section}{0}
 
 \begin{center}
@@ -60,7 +66,7 @@ San Francisco, USA}
 \vspace{3cm}
 \end{center}
 
-\input{sections/methods}
+\input{sections/SI}
 
 \end{document}
 
