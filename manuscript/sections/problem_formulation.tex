@@ -2,11 +2,74 @@
 \subsection{Intuition}
 
 Random search processes occur in many areas, from the foraging behavior
-of bacteria and animals \cite{}, to human mobility \cite{}, to computer search and optimization algorithms \cite{}.  When searching for solutions to outstanding problems, humans must come up with innovative solutions, which involve random search (e.g., gathering information, etc), along with the consolidation of past and current experience. 
+of bacteria and animals \cite{}, to human mobility \cite{}, to computer search and optimization algorithms \cite{}.  When searching for solutions to outstanding problems, humans must come up with innovative solutions, which involve random search (e.g., gathering information, etc), along with the consolidation of past and current experience.
 
-Here, we show how people go through the resolution of a complicated problem, starting from no knowledge through L'evy random search, involving synthesizing current knowledge versus exploring out-of-the box (see Figure \ref{fig:schematic}). We then measure how this process leads to convergence, albeit very slow convergence, to the solution.  
+Here, we show how people go through the resolution of a complicated problem, starting from no knowledge through L'evy random search, involving synthesizing current knowledge versus exploring out-of-the box (see Figure \ref{fig:schematic}). We then measure how this process leads to convergence, albeit very slow convergence, to the solution.
 
-%{\bf huge mistake?:  the displacement is not necessarily the path to a better solution. JS-Distance is a by-product of displacement (of the search process) $\rightarrow$ JSD is the objective function NOT the process} 
+%{\bf huge mistake?:  the displacement is not necessarily the path to a better solution. JS-Distance is a by-product of displacement (of the search process) $\rightarrow$ JSD is the objective function NOT the process}
+
+
+\subsection{Simple case}
+
+The intuition is that large jumps lead to super-diffusion while long-waiting time lead to sub-diffusion. Here, we see both large jumps and long waiting time. There is thus a tension between the two factors and how they respectively influence the random search process. However, both are correlated: larger waiting times lead to larger jumps, yet with a decreasing marginal function ($\Delta r \sim {(\Delta t)}^{\nu},~with ~\nu \approx 0.23 < 1$). This suggests that waiting time may trigger more aging (sub-diffusion), compared to long-range search (i.e., super-diffusion), which has been found to be an optimal search \cite{optimal_random_search}. In turn, the
+
+
+
+
+\subsubsection{Jump size}
+
+\be
+P(\Delta r) \sim r^{-(1+\alpha)},~with~\alpha = 0.61(3).
+\ee
+
+with upper cut-off $max(\Delta r) \approx 1$ close to the absolute max ($2\sqrt{2} \approx 2.83$).
+
+\subsubsection{waiting times}
+
+\be
+P(\Delta t) \sim t^{-(1+\beta)},~with~\beta = 0.46(3).
+\ee
+
+with a change of regime for $\Delta t > 100$ (in that case: $\beta = 1.65(1)$).
+
+\subsubsection{dependence between $\Delta r$ and $\Delta t$}
+
+nb: We find a dependence (Spearman rank correlation $corr = 0.32$) between  $\Delta r$ and $\Delta t$, which can be approximated by
+
+\be
+\Delta r \sim {(\Delta t)}^{\nu},~with ~\nu = 0.23(2)
+\ee
+
+
+\subsubsection{mean square displacement}
+
+\be
+MSD = \langle r(t)^2 \rangle = t^{\gamma},~with~\gamma = 0.35(1).
+\ee
+
+$\rightarrow$ subdiffusion
+
+\subsubsection{Number of distinct locations visited}
+
+\be
+S(t) \sim t^{\mu},~with~\mu = 0.85(0)
+\ee
+
+\begin{center}
+\ba
+\Delta S / \langle S \rangle = S^{0.33(2)}\\
+%\ee
+~or~\\
+%\be
+\Delta S / \langle S \rangle = e^{-\lambda S},~with~\lambda = 1.6\times 10^{-2}
+\ea
+\end{center}
+
+
+
+\clearpage
+
+
 
 \subsection{Jensen-Shannon Distance}
 
@@ -136,10 +199,9 @@ with $a=b=1/2$. In case of anisotropy $\rightarrow  a \neq b$.
 Each new BayesNet iteration may be a combination of former iterations, or rather something new. It is difficult to determine if {\it exploration} occurs, by opposition to {\it exploitation}. The intuition is that if the sum of distances between the new node and all existing nodes (weighted by their iteration number) is larger than at the previous step, then more exploration occurs
 
 \begin{equation}
-\overline{JSD}(N) =  \sum_{n=0}^{N-1} \frac{JSD(n,N)}{n}  
+\overline{JSD}(N) =  \sum_{n=0}^{N-1} \frac{JSD(n,N)}{n}
 \end{equation}
 
 
 
 \subsection{Formulation of reuse, with memory}
-
