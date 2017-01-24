@@ -1,3 +1,187 @@
+\section{Results}
+
+\subsection{Experiment}
+In our experiment, participants were asked to reverse engineer a Bayesian network. They were given 40 minutes, and all changes made were recorded at a 1 second resolution. Participants trying to reverse the best solution face a though problem: The {\it simple} Bayesian network has 3 nodes, and is defined by a 8-parameters vector $\mathbf{s}$ with $0 \leqslant s_k  \leqslant 1$ for $k = \{1,...,8\}$ (resp. $k = \{1,..., 16\}$ for the 4 node {\it complex} Bayesian network). 
+
+
+\subsection{L\'evy Flight / CTRW}
+We first find that the search process follows a L\'evy flight process with waiting times between random variables, which can be accounted together as a continuous time random walk. Both the distributions of displacement (Figure \ref{fig:pdfs}A ) and waiting times (Figure \ref{fig:pdfs}B ) exhibit power law distributions  (Probability density function of displacement $pdf(\Delta r) = \Delta r^{-\alpha -1}$ with $\alpha = 0.40(5)$. {\bf B.} Probability density function of waiting time $\Delta t$ $pdf(\Delta t) = \Delta t^{-\beta -1}$ with 2 regimes : $\beta_{\Delta t < 125} = 0.38(4)$ and $\beta_{\Delta t > 125} = 1.59(5)$. Distributions of $\Delta r$ and $\Delta t$ are equivalent for the simple and complex treatments.)
+
+\subsection{Mean square displacement}
+
+Mean square displacement (MSD) decays as $\sim t^{\mu}$ with $\mu_{simple} =-0.23(2)$ and $\mu_{complex} =- 0.26(1)$ showing a slow convergence (on the contrary of a normal L\'evy flight / CTRW, which is characterized by respectively diffusion $\mu_{Levy} = 1$ or super-diffusion $\mu_{CTRW} = \beta$ \cite{21,23}). 
+
+$\rightarrow$ at odds with CTRW predictions : XXXX
+
+
+\subsection{Previously visited sites}
+
+Figure \ref{fig:pdf_return}: Return to previously visited sites : $\mathrm{pdf}(V_r) \sim {V_r}^{- \gamma -1}$, with $\gamma_{simple} = 1.6(1)$ and $\gamma_{complex} = 1.5(1)$ $\rightarrow$ tendency to return to previously visited sites : This goes against the imperative to visit new sites (maximize $S_T$) in order to reduce $D_{min}$ (c.f. Figures \ref{fig:Dmin_vs_St}B and \ref{fig:Dmin_vs_St}C). Moreover, given the large number of sites [$10^{8}$ (resp. $10^{16}$) in the simple (resp. complex) case], it is remarkable that participants tend to return to exactly the same (tiny) spots. This suggest some stickiness of memory.
+
+
+\subsection{New site visitation}
+
+Figures \ref{fig:Dmin_vs_St}B and \ref{fig:Dmin_vs_St}C
+
+Minimum Euclidian distance $D_{min}$ (between the best model and the true model) exhibits a scaling as a function of the number of distinct sites visited $S_{T}$. $D_{min} \sim S_{T}^{\gamma}$ with resp. $\gamma_{simple} = -0.20(4)$ and $\gamma_{complex} = - 0.13(3)$. {\bf C.} The number of visited sites over time $S_t$ is a linear function of time $t$. Hence, the number of distinct visited sites is a predictor of the minimum distance $D_{min}$ achieved. The result also holds for average distance
+
+
+
+\subsection{$\Delta$ score as a function of displacement}
+
+Figure \ref{fig:vs_dr}A: Evolution of the distance to the true model $D$ as a function of displacement $\Delta r$. The distance scales as $D \sim {\Delta r}^{\mu}$ with $\mu_{simple} = 0.88(1)$ [resp. $\mu_{complex} = 082(2)$]. For $\Delta r > 0.2$, $D$ becomes quickly highly uncertain, but rather positive, reflecting the {\it cost} of the making ``wild"displacements. 
+
+\subsection{Waiting Time as a function of displacement}
+
+Figure \ref{fig:vs_dr}B: For $\Delta r < 0.2$, the waiting time before a displacement decision is made scales as $\Delta t \sim \Delta r^{\gamma}$ with $\gamma_{simple} = 0.11(1)$ [resp. $\gamma_{complex} = 0.13(1)$]. For $\Delta r > 0.2$, the waiting time before a displacement decision is taken get disproportionally long (up to tens of seconds on average for displacement of 0.7 (i.e., $\approx 25\%$ of the maximum displacement distance). 
+
+\subsection{Exploit vs. Explore as a function of Displacement}
+
+Figure \ref{fig:schematic}
+
+Figure \ref{fig:exploit_explore}
+
+
+\subsection{Remix cascades}
+
+Figure \ref{fig:schematic_remix}
+
+\subsubsection{Memory (backward)}
+Figure \ref{fig:memory} : Influence of a model proposed at time in subsequent models. The influence is computed as 1/distance between the focal model and subsequent models. On average over all participants in each treatment, influence $I$ decays as $I \sim t^{-\chi}$ with $\chi = 0.48(2)$ ($p < 0.01$ and $R > 0.32$). This result shows that memory is a long memory process, with implications for the convergence to the solution.
+
+\subsubsection{Induction (forward)}
+
+How much a model will influence in the future? 
+Figure \ref{}
+
+
+\subsubsection{good versus bad models}
+{\bf [$\rightarrow$  ``Good" or ``Bad" memory ?]}
+
+Influence of ``explorative" solutions versus ``exploitative" solutions ?
+
+Influence of moves than improve score rather than those that don't ?
+
+%
+%
+%\subsection{Exploration}
+%The exploration process involves visiting new sites and ensuring an efficient covering the problem space. We observe that the exploration pattern alternates local search and long-range jumps. This strategy is reminiscent of food (resp. resource) search {\it L\'evy flight} strategies followed by animals \cite{viswanathan1996levy,ramos2004levy,reynolds2007displaced} and by hunter-gatherers \cite{gonzalez2008understanding,song2010modelling,rhee2011levy}, through random search alternating short- and long-distance jumps. 
+%
+%The long jumps reduce the chance that same sites get visited multiple times, while clusters of small jumps help explore locally.
+%
+%The distribution of jump sizes $\Delta r$ is given by, 
+%
+%\begin{equation}
+%P(R > \Delta r) \sim |\Delta r|^{-\alpha}, ~~\mathrm{with}~~\alpha = 0.6().
+%\label{eq:jump_sizes}
+%\end{equation}
+%
+%Since $\alpha = 0.6 < 1$ ($\alpha$ was obtained by maximum likelihood estimation with confidence interval obtained by bootstrapping \cite{maillart,maillart,clauset}), see Figure \ref{fig:jump_sizes}) the process is super-diffusive in space, hence promoting a broad exploration of the problem space (since  $\alpha < 1$ the first (average) and second (variance) statistical moments diverge with realizations $n \rightarrow \infty$, hence ensuring exploration, bounded only by the solution space. The bounded solution space is reflected by the truncation $P(R> \Delta r) = 0$ for $r > 1$ (the theoretical limit is ${\Delta r}_{max} = \sqrt{8} \approx 2.8$).
+%
+%The super-diffusive process in space is counter balanced by the waiting times between L\'evy flight moves. The distribution of waiting times follows a power law distribution given by,
+%
+%\begin{equation}
+%P(T > \Delta t) \sim |\Delta t|^{-\beta}, ~~with~~\beta \approx 0.5,
+%\label{eq:waiting_times}
+%\end{equation}
+%
+%with a change of regime for $\Delta t  > 100$ seconds ($\alpha \approx 1.5$ for $\Delta t > 100$) see Figure \ref{fig:waiting_time}). ($\alpha$ was obtained by adaptive kernel estimation \cite{}. This method (fitting the pdf instead of the cdf) is required to account for the change of regime).
+%
+%
+%The combination of jump sizes (\ref{eq:jump_sizes}) and waiting times (\ref{eq:waiting_times}), qualifies a continuous time random walk (CTRW), which diffusion (mean square displacement MSD) can be predicted to be $\mu = 2\beta / \alpha \approx 1.6$. Since $1< \mu < 2$, the CTRW should be super-diffusive, yet not ballistic (since $\mu > 1$), in case $\Delta r$ and $\Delta t$ are uncorrelated.
+%
+%However, we observe that $MSD \sim t^{\overline{\mu}}$ with $\overline{\mu} = 0.35 < \mu = 1.6$.
+% 
+%Actually, we find that $\Delta t$ and $\Delta r$ exhibit a scaling dependency (see. Figure \ref{fig:corr_dt_vs_dr}),
+%
+%% $\Delta r \approx {\Delta t}^{\gamma}$ with $\gamma_{simple} = 0.23(2)$ ($p < 0.01$, $r > 0.2$ in the {\it simple} treatment; Spearman $\rho = 0.33$ $p < 0.01$, $\gamma_{complex} = 0.15(3)$ with $p < 0.01$, $r > 0.13$, Spearman $\rho = 0.53$ $p < 0.01$).
+%
+%{\bf [$\rightarrow$ how this scaling relation influence diffusion? it should influence negatively, but the right derivation must be worked out]}
+%
+%\paragraph{Montroll-Weiss Equation}
+%
+%\be
+%\rho(k,s) = \rho(k,0) \frac{1 - \phi(s)}{s} \frac{1}{1 -  \Phi(s) \Psi(k)}
+%\ee
+%
+%
+%
+%
+%
+%\subsection{Return to Previous Sites}
+%$\rightarrow$ The scaling dependency between $\Delta r$ and $\Delta t$ does not explain all the the discrepancies observed between $\overline{\mu}$ and $\mu$.
+%
+%We suspect that people ``return" to previously visited site, in a way that is also consistent with observed food hunting strategies \cite{}
+%
+%To determine return to previous solution sites, we consider a grid partition of the solution space in 4 (resp. 16) dimensional space, with $\bar{s_k} = \{0.01,0.02, .., 1\}$ (At this resolution level, the solution space is thus $10^{9}$ sites for the simple Bayesian network (resp. $10^{16}$ sites in the complex treatment). Distance between two sites is measured as $\Delta r_{i,j} = \| \mathbf{s}_j - \mathbf{s}_i \| = \sqrt{\sum_{k=1}^{k=8} (\mathbf{s}_{j,k} - \mathbf{s}_{i,k})^{2}}$ for $k = \{1,..,8\}$ (resp. $k = \{1,..,16\})$. With a $0.01$ grid resolution the maximum error between a proposed model and the true solution is $\epsilon_{\Delta r} = 0.01 \times \sqrt{2} \approx 2.8\%$.\\
+%
+%We observe that the number of new locations visited over time follows
+%
+%\begin{equation}
+%S(t)  \sim t^{\mu},
+%\end{equation}
+%
+%with $\mu \approx 0.7$. This is at odds with typical random search strategies involving long range {\it flights}: for L\'evy flights $\mu = 1$ \cite{} and for Continuous Time Random Walk $\mu = \beta$ \cite{}). 
+%
+%Since $\Delta r$ and $\Delta t$ are un-correlated, the sub-linear scaling visitation of new sites cannot be attributed to increased delays between jumps over time [i.e., $P(\Delta t|t) = P(\Delta t)$]. Similarly, $P(\Delta r|r(t)) = P(\Delta r)$. The only explanation for the convex nature of $S$ is the return to previously visited sites. Figure \ref{} shows the probability distribution of site visitation  $V$, which best described by a power law distribution
+%
+%\begin{equation}
+%P(V > v) \sim v^{-\gamma}
+%\end{equation}
+%
+%with $\gamma \approx 2$. In contrast, the probability $V$ of visitation is expected to be asymptotically ($t \rightarrow \infty$) uniform (P(V) ~ const.)\\
+%
+%
+%\subsection{Convergence}
+%We find that the Euclidian distance between a proposed Bayesian network (the {\it model} thereafter) and the true Bayesian network (the {\it solution}), decays on average as, 
+%
+%\begin{equation}
+%\langle D(t) \rangle  \sim t^{-\nu},
+%\end{equation}
+%
+%with $\nu_{simple} = 0.149(2)$ and $\nu_{complex} = 0.162(2)$ ( $p < 0.01$, $r^2 > 0.7$) (see Figure \ref{fig:decay}). Since $\nu \ll 1$, the distance between the model and the solution converges extremely slowly. By extrapolation, it would take 7 days to ensure $\langle D \rangle < 0.1$ [one realization (i.e., one participant) may however reach that threshold, but it remains unclear whether if it would be a matter of chance or the result of a better search strategy]. Given the size of the problem space (see above), and the solution sparsity in this space (there is indeed only one possible solution), one shall expect a slow convergence on average. 
+%
+%\subsection{Positive/Negative implications of return to previously visited sites}
+%
+%return to previously visited sites may be helpful to return to previously better solution
+%
+%
+%\subsection{Exploration versus Exploitation}
+%
+%
+%
+%\subsection{Implications of waiting times with change of regime: cascades ?}
+%
+%
+
+
+%
+%\subsection{Ultra Slow Diffusion / Power Law Decay}
+%
+%The Continuous Time Random Walk Model (CTRW) of solution search predicts that the mean square displacement (MSD) of a person's model from the stochastic properties of the real system asymptotically follows $\langle \Delta x^2 (t) \rangle \sim t^{\nu}$ with $\nu = 2\beta /\alpha$. 
+%
+%\begin{equation}
+%\label{power_law_decay}
+%CD(t) = C \cdot t^{-\alpha},
+%\end{equation}
+%
+%where we estimate from our experimental data that $\alpha = 0.09$ and we find that $C$ is a constant which depends on the system that people make their inferences about; in our case, the $simple$ and $complex$ treatments. 
+%
+%\begin{equation}
+%\label{ultraslowdiffusion}
+%S(t) = 1 - CD(t) = 1- C \cdot t^{-\alpha},
+%\end{equation}
+%
+%
+%\subsubsection{Stepwise Jumps}
+%
+%\begin{equation}
+%P(R > \Delta r) \sim |\Delta r|^{-\alpha}, ~~with~~\alpha \approx 0.1,
+%\end{equation}
+%
+%jump size $\Delta r$ Figure \ref{fig:jump_sizes}
+
+
 \section{Theory and Findings}
 
 \subsection{Ultra Slow Diffusion / Power Law Decay}
