@@ -3,9 +3,8 @@
 \usepackage{url}
 \usepackage{epsfig}
 \usepackage{graphicx,color}% Include figure files
-\usepackage{epstopdf}
-\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1
-.tif`.png}
+%\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
 \usepackage[psamsfonts]{amssymb}
 \usepackage{amsmath}
 \usepackage{indentfirst}
@@ -20,6 +19,7 @@
 %\title{Patterns of Human Learning in Complex Systems}
 \title{Do modern humans solve problems with \\ algorithms used by hunter-gatherers in search for food?}
 
+
 \author{Johannes Castner}
 \email{jcastner@ebay.com}
 \affiliation{Ebay Research,
@@ -28,7 +28,6 @@ San Francisco, USA}
 \author{T. Maillart}
 \email{maillart@berkeley.edu}
 \affiliation{UC Berkeley, Berkeley, USA}
-
 
 
 \date{\today}
@@ -42,15 +41,17 @@ San Francisco, USA}
 \maketitle
 
 \input{sections/intro}
-\input{sections/litreview}
 %\input{sections/background}
-\input{sections/measures}
+
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/conclusion}
+
+\clearpage
 \input{sections/methods}
 
-\input{sections/problem_formulation}
-
 \bibliographystyle{apsrev4-1}
-\bibliography{bib/references}
+\bibliography{bib/references,bib/cognition_causality,bib/levyflight_foraging,bib/misc}
 
 \clearpage
 \input{sections/figures}
@@ -62,12 +63,20 @@ San Francisco, USA}
 \renewcommand\thesection{S\arabic{section}}
 \setcounter{section}{0}
 
+\renewcommand\theequation{S\arabic{equation}}
+\setcounter{equation}{0}
+
+
 \begin{center}
 {\Large Supplementary Materials}
 \vspace{3cm}
 \end{center}
 
 \input{sections/SI}
+\input{sections/litreview}
+\input{sections/problem_formulation}
+\input{sections/measures}
+
 
 \end{document}
 
