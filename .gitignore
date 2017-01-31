@@ -36,3 +36,23 @@ figures/.DS_Store
 *.pyc
 
 scripts/.DS_Store
+
+manuscript/sections/methods.pdf
+
+manuscript/main.synctex.gz(busy)
+
+*.tex~
+
+*.tex~
+
+*.gz(busy)
+
+*.tex~
+
+manuscript/sections/intro.tex~
+
+manuscript/sections/measures.tex~
+
+manuscript/main.tex~
+
+scripts/Data/dicParticipants.json
