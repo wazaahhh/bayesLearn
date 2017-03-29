@@ -1,15 +1,17 @@
 \section{Results}
-With humans engaged in solving hard-problems, we find additional constraints to the continuous-time random walk (CTRW) process widely found to hold in nature, when animals need to find isolated food spots on large surfaces, which is equivalent to searching sparse solutions in a wide problem space.
+When humans solve hard-problems, we find that limits on cognition seem to constrain the continuous-time random walk (CTRW) process, the patterns of which are widely found in nature. 
 
-With the reported displacement and waiting time functions (c.f., Figures \ref{fig:pdfs}A and \ref{fig:pdfs}B), the diffusion process is supposed to be ballistic, and mean square displacement (MSD) should increase as a result. For humans searching a unique solution in a large problem space, this is not the case, and MSD decays as $\sim t^{\mu}$ with $\mu_{simple} =-0.23(2)$ and $\mu_{complex} =- 0.26(1)$ showing a slow convergence (on the contrary of a normal L\'evy flight / CTRW, which is characterized by respectively diffusion $\mu_{Levy} = 1$ or super-diffusion $\mu_{CTRW} = \beta$ \cite{21,23}). 
 
-This suggests additional constraints, such as periodic return to previously visited problem sub-spaces, or new solutions that integrate information from previously proposed solutions following an alternation of {\it exploration} and {\it exploitation} mechanisms \cite{march1991exploration}. The former may be related to a kind of {\it preferential return} in the physical space \cite{song2010modelling} and to some extent to some hardwired instinct to return to previously visited food spots with hope that resource renewal has occurred \cite{}. The {\it exploration} vs. {\it exploitation} hypothesis is more related to how humans deal with complicated abstract (non-tangible) problems, such as innovation \cite{march1991exploration}.
+With the reported displacement and waiting time functions (c.f., Figures \ref{fig:pdfs}A and \ref{fig:pdfs}B), models predict that the diffusion process is ballistic, and mean square displacement (MSD) increases as a result. For our laboratory participants, searching for a unique solution in a large problem space, this was not the case, and MSD decays as $\sim t^{\mu}$ with $\mu_{simple} =-0.23(2)$ and $\mu_{complex} =- 0.26(1)$ exhibited a slow convergence (compared to the L\'evy flight / CTRW, which is optimal and characterized by $1<\mu_{Levy} /leq 3$ or super-diffusion $\mu_{CTRW} = \beta$ \cite{21,23}). 
+%I don't understand $\mu_{CTRW} = \beta$ ? 
+
+These findings suggest additional constraints, such as periodic return to previously visited problem sub-spaces, or integration of information from previously proposed solutions to synthesize new solutions following an alternation of {\it exploration} and {\it exploitation} mechanisms \cite{march1991exploration}. The former may be related to a kind of {\it preferential return} in the physical space \cite{song2010modelling} and may to some extent be a hardwired instinct to return to previously visited food spots in hope that resource renewal has occurred \cite{}. The {\it exploration} vs. {\it exploitation} hypothesis has an observable implication--the patterns that result from that behavior--of human constraints with respect to complex abstract (non-tangible) problems and innovation \cite{march1991exploration}.  Evolutionary optimality, then, seems to constrain modern optimality: our ability to explore without returning to previous locations in the abstract thought space.  
 
 Figure \ref{fig:schematic} shows the three possible choices made by individuals:
 
 \begin{itemize}
-  \item {\bf explore} : in that case, the individual will search for new solutions outside the convex hull of the currently known solution space (i.e., the (hyper-)surface defined by all already visited solutions. 
-  \item {\bf exploit} : individuals {\it remix} $p < n$ already visited solutions into the $n$-th solution.
+  \item {\bf explore} : when a participant explores, she will search for new solutions outside the convex hull of the currently known solution space (i.e., the (hyper-)surface defined by all already visited solutions. 
+  \item {\bf exploit} : participants {\it remix} $p < n$ already visited solutions to arrive at their $n$-th solution.
   \item {\bf return} : with some probability an individual may return to a previously visited site. 
 \end{itemize}
 
@@ -20,9 +22,9 @@ Figure \ref{fig:schematic} shows the three possible choices made by individuals:
 EE_{j} = \frac{2 \langle D_{jsd,j} \rangle}{max(D_{jsd})}  
 \end{equation}
 
-with $\langle D_{jsd,i} \rangle$ the average distance of solution $j$ compared to all previous solutions $j < i$, and $ max(D_{jsd})$ the maximum distance between 2 solutions. For $EE < 1$, the individual is choosing a solution within the boundaries of the convex hull of already explored solutions. For $EE \approx 1$, the proposed solution is on -- or close to -- the boundaries, and for $EE > 1$, the proposed solution is outside the convex hull, and therefore explorative. The larger $EE$, the more explorative the proposed solution. For both 3-node and 4-node BN treatments,  the number of explorative moves is over all people much larger than exploitative ones :  $5416$ vs. $1873$ (resp. $6260$ vs. $4689$). 
+with $\langle D_{jsd,i} \rangle$ the average distance of solution $i$ compared to all previous solutions $j < i$, and $ max(D_{jsd})$ the maximum distance between 2 solutions. For $EE < 1$, the individual is choosing a solution within the boundaries of the convex hull of already explored solutions. For $EE \approx 1$, the proposed solution is on -- or close to -- the boundaries, and for $EE > 1$, the proposed solution is outside the convex hull, and therefore explorative. The larger $EE$, the more explorative the proposed solution. For both 3-node and 4-node BN treatments,  the number of explorative moves is over all people much larger than exploitative ones :  $5416$ vs. $1873$ (resp. $6260$ vs. $4689$). 
 
-Minimum Euclidian distance $D_{min}$ (between the best model and the true model) exhibits a scaling as a function of the number of distinct sites visited $S_{T}$. $D_{min} \sim S_{T}^{\gamma}$ with resp. $\gamma_{simple} = -0.20(4)$ and $\gamma_{complex} = - 0.13(3)$. {\bf C.} The number of visited sites over time $S_t$ is a linear function of time $t$. Hence, the number of distinct visited sites is a predictor of the minimum distance $D_{min}$ achieved. The result also holds for average distance
+Minimum Euclidian distance $D_{min}$--between the best model thus far and the correct model (in the experimental setting the model that generated the data observed by our participants is the ``correct model'')--exhibits a scaling as a function of the number of distinct sites visited $S_{T}$. $D_{min} \sim S_{T}^{\gamma}$ with resp. $\gamma_{simple} = -0.20(4)$ and $\gamma_{complex} = - 0.13(3)$. {\bf C.} The number of visited sites over time $S_t$ is a linear function of time $t$. Hence, the number of distinct visited sites is a predictor of the minimum distance $D_{min}$ achieved. The result also holds for average distance.
 
 \paragraph{Return}
 Figure \ref{fig:pdf_return}: Return to previously visited sites : $\mathrm{pdf}(V_r) \sim {V_r}^{- \gamma -1}$, with $\gamma_{simple} = 1.6(1)$ and $\gamma_{complex} = 1.5(1)$ $\rightarrow$ tendency to return to previously visited sites : This goes against the imperative to visit new sites (maximize $S_T$) in order to reduce $D_{min}$ (c.f. Figures \ref{fig:Dmin_vs_St}B and \ref{fig:Dmin_vs_St}C). Moreover, given the large number of sites [$10^{8}$ (resp. $10^{16}$) in the simple (resp. complex) case], it is remarkable that participants tend to return to exactly the same (tiny) spots. This suggest some stickiness of memory.
@@ -40,11 +42,9 @@ Figure \ref{fig:pdf_return}: Return to previously visited sites : $\mathrm{pdf}(
 \subsection{good versus bad models}
 Individuals deploy {\it exploration}, {\it exploitation}, and {\it return} strategies in order to get closer to the solution (i.e., the true model). Each move may lead to improvement (i.e., reduction of distance to the true model) or, on the contrary, to dis-improvement. 
 
-We find that displacement has an influence on improvement. As one could surmise, small displacements can only bring marginal improvement, while larger displacements bring more opportunities for improvement, yet at the cost of increased volatility. Large displacements ($\Delta r > 0.2$) bring rather negative performance. Figure \ref{fig:vs_dr} shows the evolution of the distance to the true model $D$ as a function of displacement $\Delta r$. The distance scales as $D \sim {\Delta r}^{\mu}$ with $\mu_{simple} = 0.88(1)$ [resp. $\mu_{complex} = 082(2)$]. For $\Delta r > 0.2$, $D$ becomes quickly highly uncertain, but rather positive, reflecting the {\it cost} of the making ``wild"displacements. 
+We find that displacement has an influence on improvement. As one could surmise, small displacements can only bring marginal improvement, while larger displacements bring more opportunities for improvement, yet at the cost of increased volatility. Large displacements ($\Delta r > 0.2$) bring rather negative performance. Figure \ref{fig:vs_dr} shows the evolution of the distance to the true model $D$ as a function of displacement $\Delta r$. The distance scales as $D \sim {\Delta r}^{\mu}$ with $\mu_{simple} = 0.88(1)$ [resp. $\mu_{complex} = 082(2)$]. For $\Delta r > 0.2$, $D$ uncertainty steeply increases, reflecting the {\it cost} of making ``wild" displacements. 
 
-There is no clear relation between time spent on taking the decision to move and performance {\bf [show $\Delta D_{jsd}$ versus $\Delta t$] if relevant: question here is whether waiting leads to better results.}.
-
-However, the decision to make a larger displacement takes more time. For $\Delta r < 0.2$, the waiting time before a displacement decision is made scales as $\Delta t \sim \Delta r^{\gamma}$ with $\gamma_{simple} = 0.11(1)$ [resp. $\gamma_{complex} = 0.13(1)$]. For $\Delta r > 0.2$, the waiting time before a displacement decision is taken get disproportionally long (up to tens of seconds on average for displacement of 0.7 (i.e., $\approx 25\%$ of the maximum displacement distance). On both panels, blue and red areas show the 25th percentile confidence intervals.
+While there is no clear relation between time spent between moves and performance {\bf [$\Delta D_{jsd}$ versus $\Delta t$]}, the decision to make a larger displacement takes more time. For $\Delta r < 0.2$, the waiting time before a displacement decision is made scales as $\Delta t \sim \Delta r^{\gamma}$ with $\gamma_{simple} = 0.11(1)$ [resp. $\gamma_{complex} = 0.13(1)$]. For $\Delta r > 0.2$, the waiting times before a displacement decision is taken get disproportionally long (up to tens of seconds on average for a displacement of 0.7 (i.e., $\approx 25\%$ of the maximum displacement distance). On both panels, blue and red areas show the 25th percentile confidence intervals.
 
 
 {\bf [show $\Delta D_{jsd}$ versus Explore and Exploit]}
@@ -54,19 +54,19 @@ However, the decision to make a larger displacement takes more time. For $\Delta
 
 Influence of ``explorative" solutions versus ``exploitative" solutions ?
 
-Influence of moves than improve score rather than those that don't ?
+Influence of moves that improve scores rather than those that don't ?
 
 
 
 \subsection{Dynamics Formulation of Exploration/Exploitation}
 
-Now, one may consider that making one ``bad move" (with arguably large displacement) may not be immediately beneficial, but rather help on the long term, through a process of exploration (with no yield), followed by some efficient exploitation (when improvements are performed).
+One may consider that making one ``bad move" (with arguably large displacement) may not be immediately beneficial, but it may help in the long term through a process of exploration (with no yield), followed by some efficient exploitation during which improvements are performed via combination.
 
-For that, one may consider how past solutions influence newer, and how this promotes performance, or not. A special attention should be paid to (i) exploration and (ii) return. In the latter case, we shall try to determine whether returning is the acknowledgement of a dead-end (in that case return should bring sustainable improvement), or whether it is less rational (e.g., some kind of cognitive stickiness).
+For that, we must consider how past solutions influence new ones, and how this effects performance. Special attention should be paid to (i) explorations and (ii) returns to previous solutions. We shall determine whether a return to a previous solution likely signals an acknowledgement of having reached a dead-end (in which case return should bring sustainable improvement), or whether such returns are likely less reasoned (e.g., the result of some kind of cognitive stickiness).
 
-To capture the exogenous contribution of new solution exploration and the endogenous contributions of exploitation of previous solutions.
+%To capture the exogenous contribution of new solution exploration and the endogenous contributions of exploitation of previous solutions. 
 
-{\bf [here, explain why a DISCRETE Process is relevant: One could think of discrete neural net firing, which translates into an intensity of activity. Another explanation is more far-fetched by saying that Hawkes processes capture well human activity, which in turn stems from human intelligence and cognition.]}
+%{\bf [here, explain why a DISCRETE Process is relevant: One could think of discrete neural net firing, which translates into an intensity of activity. Another explanation is more far-fetched by saying that Hawkes processes capture well human activity, which in turn stems from human intelligence and cognition.]}
 
 The dynamics of exploration versus exploitation can be captured together by a generic cascade process, which is well described by the excited  Hawkes conditional Poisson process \cite{hawkes1974acluster}.
 The Hawkes process typically captures well a variety of social dynamics involving complex human interactions such as online viral meme propagation \cite{crane2008}, gangs and crime in large American cities \cite{mohler2011}, cyber crime \cite{baldwin2012} and financial contagion \cite{ait-sahalia2010,filiminov2012,filiminov2014}.  
@@ -96,40 +96,42 @@ parameter. For $n<1$, $n=1$ and $n>1$, the process is respectively sub-critical,
 
 A schematic representation of the process at work is shown on Figure \ref{fig:schematic_remix}
 
-Figure \ref{fig:memory} : Influence of a model proposed at time in subsequent models. The influence is computed as $1/D$ between the focal model and subsequent models. If we consider a network with focal node $i$ (i.e., the newest solution) with edges of some length connecting to other nodes (i.e., past proposed solutions), then influence of the latter on the former, may be considered as weighted edges, with edge weight $= 1/D_{i,j}$ .
+Figure \ref{fig:memory} : Influence of a model proposed at time $t$ in subsequent models. The influence is computed as $1/D$ between the focal model and subsequent models. If we consider a network with focal node $i$ (i.e., the newest solution) with edges of some length connecting to other nodes (i.e., past proposed solutions), then influence of the latter on the former, may be considered as weighted edges, with edge weight $= 1/D_{i,j}$ .
 
 
 
-In a nutshell, there are 2 somehow distinct discrete processes:
+In sum, there are two distinct discrete processes:
 
 \begin{itemize}
-  \item the discrete process of proposing a new solution: the waiting times between two propositions may relate to some information processing time by the mind.
-  \item the discrete process of blending exploration of new solutions with the exploitation of past proposed solutions: This blend may be seen as past solutions ``firing" repeatedly in the mind. The repeated firing shall translate into an intensity. This intensity is assumed to be proportional to the distance between the focal solution $i$ and past solutions $j$. In other words, the more a past solution $j$ ``fires" in the mind, the more likely the new solution $i$ will be close to  $j$. One may assume that firing occurs as the individual prepares her next solution, i.e., between solutions $i-1$ and $i$. \end{itemize}
+  \item the discrete process of proposing a new solution: the waiting times between two propositions may relate to the time thatit takes the mind to process information.
+  \item the discrete process of blending exploration of new solutions with the exploitation of past proposed solutions: This blend may be seen as past solutions ``firing" repeatedly in the mind. The repeated firing translates into intensity. This intensity is assumed to be proportional to the distance between the focal solution $i$ and past solutions $j$. In other words, the more a past solution $j$ ``fires" in the mind, the closer we predict the new solution $i$ to be to $j$. One may assume that firing occurs as the individual prepares her next solution, i.e., between solutions $i-1$ and $i$. \end{itemize}
 
 Memory firing 
 
 
 \subsection{Good or bad firing ? Renewal ? Evolutionary pressure?}
-Firing of past solutions may be positive or negative, depending on the balance between keeping in mind good past solutions (i.e., closer to the true solutions), expansion of the solution space (i.e., exploration), and renewal (i.e., leaving behind / forgetting past unfruitful solutions. 
+Firing of past solutions may be positive or negative, depending on the balance between keeping in mind good past solutions (i.e., closer to the true solutions), expansion of the solution space (i.e., exploration), and renewal i.e. forgetting the folly of past solutions. 
 
 {\bf [We shall analyze this process and try to predict good versus bad performer in that framework.]}
 
 
 \subsection{Brain Processing Time \& Economics of Time}
-One cannot observe what's going on during these thinking moments, i.e., between two moves. We are left wondering. In foraging, the $\Delta t$ may be connected to travel time, or the time needed to consume resources (interestingly consuming these resources without depleting them completely, apparently). Here, the resource to consume is ``brain processing time", with an overall limited time budget. So individuals must strike a balance between spending time thinking and testing new solutions.  Figures \ref{fig:vs_dr}A and \ref{fig:vs_dr}B suggest that making big -- more risky/uncertain -- moves take more brain processing. 
+We cannot directly observe the cognitive processes that occur during the time that elapses between the times at which solutions are proposed. In foraging, $\Delta t$ denotes the time that it takes to travel between potential food sources and the time needed to consume the resources that are found (interestingly humans generally consume these resources without depleting them completely). Here, the resource to consume is the difference between participants actual payoffs and those that they could have achieved if they had used their ``brain processing time" differently (opportunity costs), with a finite and limited time budget. To be precise, monitory payoffs, that depend on the present quality of the current proposed model, occur every two minutes for a total of 30 minutes, after an initial 15 minutes of unpaid learning how the game is played. So individuals must strike a balance between spending time thinking and testing new solutions.  Figures \ref{fig:vs_dr}A and \ref{fig:vs_dr}B suggest that making big -- more risky/uncertain -- moves takes more brain processing, as a greater region of previous exploration puts more demand on one's ability to integrate. 
 
-This may relate to Intertemporal choice ? $\rightarrow$ discounted utility / decision theory? It's somehow different because here we examine the process of making a choice: one may see the problem from two possible perspectives : 
+%This may relate to Intertemporal choice ? $\rightarrow$ discounted utility / decision theory? It's somehow different because 
+Here we examine not the choices that participants make in uncertain and risky environments (or intertemporal choice) with known probabilities, as is common in economic models, but rather we examine the process of making a choice about guessing and learning unknown probabilities, with no assumptions about priors.  One may see the problem from two possible perspectives : 
+
 
 \begin{enumerate}
-  \item As individuals delay action, more reshuffling (renewal) occurs, and hence it is more likely that displacement may be greater.
-  \item Or on the contrary, the agent has for objective to make a large displacement, and she will spend more time looking strategically for a meaningful move (i.e., a non-trivial one that brings together exploration, exploitation and performance).
+  \item (Passive guessing, followed by testing) As individuals delay action, more cognitive reshuffling (renewal) occurs, and hence it is more likely that the displacement is greater.
+  \item (Active thought and speculation, followed by strategic exploitation) Or on the contrary, the agent has the objective to make a large displacement, and she will spend more time looking strategically for a meaningful move (i.e., a non-trivial one that brings together exploration, exploitation and performance).
 \end{enumerate}
 
 {\bf [One may ask whether one or the other apply here ? Can we test either hypothesis ?]}
 
 
 \paragraph{Simple Economics of Time}
-Now one may think of a simple model of time efficiency. The simple question here is the following: shall an agent make multiple small moves with little expected incremental performance (i.e., Distance reduction) or on the contrary make less moves, yet with more displacement and hence, more expected performance (in less increments).
+We propose a simple model of time efficiency. The question here is the following: shall an agent make multiple small moves with little expected incremental performance (i.e., Distance reduction) or on the contrary make fewer moves, with larger displacements and hence more expected performance (in fewer increments)?
 
 On the one hand, we know that $\Delta D_{jsd} \sim - \Delta r ^{\mu}$ with $\mu \approx 0.85$ for $\Delta r < 0.2$, on the other hand, $\Delta t \sim \Delta r^{\gamma}$ with $\gamma \approx 0.12$, hence $\Delta r \sim \Delta t^{1/\gamma}$ also for $\Delta r < 0.2$.
 
@@ -139,7 +141,7 @@ Therefore,
 \Delta D_{jsd} \sim -  \Delta t^{\mu / \gamma} \approx \Delta t^{7.1}~~with~~\Delta r < 0.2~(resp.~\Delta t  < 3)
 \end{equation}
 
-We want to maximize $\sum_{i=1}^{N} \Delta D_{jsd}$, with $N$ being the number of trials, which we want to maximize. Because $\Delta t$ diverges and $\Delta D_{jsd}$ get positive (dis-performance) when $\Delta r > 0.2$, we have the additional constraint $\Delta t  < 3$ seconds. Actually, the best strategy seems to be waiting for around 3 seconds. {\bf [it may look a bit naive $\rightarrow$ may be necessary to enrich the mechanism with e.g., some stochasticity]}.
+We want to maximize $\sum_{i=1}^{N} \Delta D_{jsd}$, with $N$ being the number of trials, which we want to maximize. Because $\Delta t$ diverges and $\Delta D_{jsd}$ becomes positive (dis-performance) when $\Delta r > 0.2$, we have the additional constraint $\Delta t  < 3$ seconds. The best strategy then seems to be to wait for approximately 3 seconds. {\bf [it may look a bit naive $\rightarrow$ may be necessary to enrich the mechanism with e.g., some stochasticity]}.
 
 
 \begin{itemize}
