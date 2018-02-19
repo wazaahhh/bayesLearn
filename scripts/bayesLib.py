@@ -61,6 +61,14 @@ def loadDistances(treatment="simple",distanceType="jsd",remove_duplicates=False)
     return pd.DataFrame(dic)
 
 def makeDicParticipants(div_displace=False,grid_distance=False,overwrite=False,save=True):
+    '''makes a dictionary with data for each participant.
+
+       Options :
+       - div_displace : adds divergence and diversity metrics
+       - grid_distance : distance metrics assuming a n-dimensional grid (solution space partitionning)
+       - overwrite : overwrite existing file
+       - save : save file
+    '''
 
     if not overwrite:
         try:
@@ -85,7 +93,7 @@ def makeDicParticipants(div_displace=False,grid_distance=False,overwrite=False,s
         for k,key in enumerate(treatment_dic.keys()): #cleanup data
 
             index = [] # time index of change occurrences
-            V = [0]*len(trueG)
+            V = [[0]*len(trueG)]
 
             dstTruth = {'sqrt' : [],'jsd' : []}
 
@@ -94,7 +102,10 @@ def makeDicParticipants(div_displace=False,grid_distance=False,overwrite=False,s
 
                 #try:
                 if not list(v)==V[-1]: # skip unchanged states
-                    V.append(list(v))
+                    if V[-1] == [0]*len(trueG):
+                        V = [v]
+                    else:
+                        V.append(list(v))
                     index.append(i)
                     '''distance from the truth (i.e., the solution)'''
                     dstTruth['sqrt'].append(distances['jsd'][key][i])
@@ -111,7 +122,7 @@ def makeDicParticipants(div_displace=False,grid_distance=False,overwrite=False,s
         if div_displace:
             dicParticipants[key]['dd'] = divergence_displacement(dicParticipants,key)
         if grid_distance:
-            dic = gridDistance(dicParticipants,key,distance='jsd',digits=1)
+            dic = gridDistance(dicParticipants,key,digits=1)
             dicParticipants[key]['stepDST'] = dic['stepDST']
             dicParticipants[key]['visitations'] = dic['visitations']
 
@@ -245,7 +256,7 @@ def divergence_displacement(dicParticipants,participantKey):
            'nPointJSD' : list(nPointJSD)}
 
 
-def gridDistance(dicParticipants,participantKey,distance='jsd',digits=1):
+def gridDistance(dicParticipants,participantKey,digits=1):
     '''
     Performs distance measures by assuming that the solution space is a n-dimensional grid.
 
@@ -267,6 +278,7 @@ def gridDistance(dicParticipants,participantKey,distance='jsd',digits=1):
     SiteExpl = []
 
     for i,ix in enumerate(V):
+        #if not isinstance(ix, list):continue # skip NaNs
         dic = {'jsd': [],'lsqr' : [],'timeDST' : []}
         for j,jx in enumerate(V[:i]):
             dstJSD = Distance(np.round(ix,10),np.round(jx,10)) # distance
