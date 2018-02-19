@@ -1,0 +1,34 @@
+\section{Discussion}
+We find that performance (min distance achieved) is associated with the number of distinct sites visited over time. For that, 3 aspects are critical : (i) First the number of proposed solutions (translates into the rate of proposed solutions),  (ii) The propensity to return to previously visited solutions, and (iii) the ability to remix previously visited solutions with new, explorative ones, through an exploration vs. exploitation process, combined with a memory function.
+
+
+
+
+
+
+
+
+Outstanding problems :
+
+- decreasing mean square displacement: it basically seems that with time displacement decreases: This can be due to (i) the limited space (unlikely), (ii) some convergence toward the true model, or (iii) some stickiness, or (iv) probably (ii) and (iii) together.
+  
+- connecting cascades and memory with (i) evolutionary theory and (ii) increased success (resp. counter-performance). Connect also with potential cascading processes in cognition (any knowledge about this? memory?)
+
+- time between return visits (if return visits happen in close time, then it matters little)
+
+- connect results with Distance Decay, but basically a model could be summarized as $Distance \sim S_T$ (by the way $D_{min}$ versus $S_T$ could be improved by looking at $D_t$ versus $S_t$). $S_T$ (resp. $S_t$) is a function of displacement $\Delta r$ decisions (which may also cost additional time) and (obviously) their influence on score. 
+
+In summary, there is at some point a displacement decision with a part of ``risk", which can by the way be discounted by time spent (waiting time relative to avg waiting time and/or experimentation duration and/or time left). Large displacement can be associated with more risky exploration and more time required for decision. It looks like there is a $\Delta r$ which maximize improvement ($\Delta r \approx 0.15$). This is interesting because it suggests that such move size maximizes the chance that a new patch will be visited.
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,27 +1,135 @@
 \section{Problem Formulation}
-
 \subsection{Intuition}
-Random search processes occur in many areas, from the foraging behaviorof bacteria and animals \cite{}, to human mobility \cite{}, to computer search and optimization algorithms \cite{}.  When searching for solutions to outstanding problems, humans must come up with innovative solutions, which involve random search (e.g., gathering information, etc), along with the consolidation of past and current experience. 
 
-Here, we show how people go through the resolution of a complicated problem, starting from no knowledge through L'evy random search, involving synthesizing current knowledge versus exploring out-of-the box (see Figure \ref{fig:schematic}). We then measure how this process leads to convergence, albeit very slow convergence, to the solution.  
+Random search processes occur in many areas, from the foraging behavior
+of bacteria and animals \cite{}, to human mobility \cite{}, to computer search and optimization algorithms \cite{}.  When searching for solutions to outstanding problems, humans must come up with innovative solutions, which involve random search (e.g., gathering information, etc), along with the consolidation of past and current experience.
 
-%{\bf huge mistake?:  the displacement is not necessarily the path to a better solution. JS-Distance is a by-product of displacement (of the search process) $\rightarrow$ JSD is the objective function NOT the process} 
-\subsection{Distributions of JS-distance and Waiting Times}
+Here, we show how people go through the resolution of a complicated problem, starting from no knowledge through L'evy random search, involving synthesizing current knowledge versus exploring out-of-the box (see Figure \ref{fig:schematic}). We then measure how this process leads to convergence, albeit very slow convergence, to the solution.
+
+%{\bf huge mistake?:  the displacement is not necessarily the path to a better solution. JS-Distance is a by-product of displacement (of the search process) $\rightarrow$ JSD is the objective function NOT the process}
+
+\subsection{Simple case}
+
+The intuition is that large jumps lead to super-diffusion while long-waiting time lead to sub-diffusion. Here, we see both large jumps and long waiting time. There is thus a tension between the two factors and how they respectively influence the random search process. However, both are correlated: larger waiting times lead to larger jumps, yet with a decreasing marginal function ($\Delta r \sim {(\Delta t)}^{\nu},~with ~\nu \approx 0.23 < 1$). This suggests that waiting time may trigger more aging (sub-diffusion), compared to long-range search (i.e., super-diffusion), which has been found to be an optimal search \cite{optimal_random_search}. In turn, the
 
 
-jump size $\Delta r$ and waiting time $\Delta t$
+
+
+\subsubsection{Jump size}
+
+\be
+P(\Delta r) \sim r^{-(1+\alpha)},~with~\alpha = 0.61(3).
+\ee
+
+with upper cut-off $max(\Delta r) \approx 1$ close to the absolute max ($2\sqrt{2} \approx 2.83$).
+
+\subsubsection{waiting times}
+
+\be
+P(\Delta t) \sim t^{-(1+\beta)},~with~\beta = 0.46(3).
+\ee
+
+with a change of regime for $\Delta t > 100$ (in that case: $\beta = 1.65(1)$).
+
+\subsubsection{dependence between $\Delta r$ and $\Delta t$}
+
+nb: We find a dependence (Spearman rank correlation $corr = 0.32$) between  $\Delta r$ and $\Delta t$, which can be approximated by
+
+\be
+\Delta r \sim {(\Delta t)}^{\nu},~with ~\nu = 0.23(2)
+\ee
+
+
+\subsubsection{mean square displacement}
+
+\be
+MSD = \langle r(t)^2 \rangle = t^{\gamma},~with~\gamma = 0.35(1).
+\ee
+
+$\rightarrow$ subdiffusion
+
+\subsubsection{Number of distinct locations visited}
+
+\be
+S(t) \sim t^{\mu},~with~\mu = 0.85(0)
+\ee
+
+\begin{center}
+\ba
+\Delta S / \langle S \rangle = S^{0.33(2)}\\
+%\ee
+~or~\\
+%\be
+\Delta S / \langle S \rangle = e^{-\lambda S},~with~\lambda = 1.6\times 10^{-2}
+\ea
+\end{center}
+
+
+
+\clearpage
+
+
+
+\subsection{Jensen-Shannon Distance}
+
+
+\begin{equation}
+{\rm JSD}(P \parallel Q)= \sqrt{\frac{1}{2}D(P \parallel M)+\frac{1}{2}D(Q \parallel M)}
+\end{equation}
+where $M=\frac{1}{2}(P+Q)$
+
+
+The Jensen-Shannon Distance (JSD) is a measure of mutual information. We use it to compare the distance of a BayesNet model from the true model (see Figure \ref{fig:decay}), and between models.\\
+
+
+Score:
+\begin{equation}
+S = 1 - JSD
+\end{equation}
+
+
+
+\subsection{Ultra Slow Diffusion / Power Law Decay}
+
+The CTRW model predicts that the mean square displacement (MSD) asymptotically follows $\langle \Delta x^2 (t) \rangle \sim t^{\nu}$ with $\nu = 2\beta /\alpha$
+
+\begin{equation}
+\label{power_law_decay}
+JSD(t) = C \cdot t^{-\alpha},
+\end{equation}
+
+with $\alpha = 0.09$ and $C$ a constant, specific to the $simple$ and $complex$ models
+
+\begin{equation}
+\label{ultraslowdiffusion}
+S(t) = 1 - JSD(t) = 1- C \cdot t^{-\alpha},
+\end{equation}
+
+
+\subsubsection{Stepwise Jumps}
 
 \begin{equation}
 P(R > \Delta r) \sim |\Delta r|^{-\alpha}, ~~with~~\alpha \approx 0.1,
 \end{equation}
 
-and
+jump size $\Delta r$ Figure \ref{fig:jump_sizes}
+
+
+
+\subsubsection{Memory Effects / Waiting Times}
+
+waiting time $\Delta t$
+
+
+Figure \ref{fig:waiting_times}
 
 \begin{equation}
 P(T > \Delta t) \sim |\Delta t|^{-\beta}, ~~ with~~  1< \beta < 2
 \end{equation}
 
-\subsection{Continuous Time Random Walk (CTRW)}
+
+
+\subsubsection{Continuous Time Random Walk (CTRW)}
 
 continuous-time random walk (CTRW)  $\rightarrow$ is a generalization of a random walk where the wandering particle waits for a random time between jumps. It is a stochastic jump process with arbitrary distributions of jump lengths and waiting times.[1][2][3] More generally it can be seen to be a special case of a Markov renewal process.
 
@@ -53,12 +161,29 @@ Characteristic waiting time:
 \end{equation}
 
 
-\subsection{anisotropy}
+\subsection{Number of distinct locations / Visitation frequency:}
+
+(A) The number of distinct locations $S(t)$ visited by a randomly
+moving object is expected to follow:
+
+
+\begin{equation}
+S(t) \sim t^{\mu}
+\end{equation}
+
+
+where $\mu = 1$ for Lﾂ思y flights [24] and $\mu = \beta$ for CTRW. {\bf [Here, it is unclear what visiting a distinct location means ]}
+The probability $f$ of a user to visit a given location is expected to be asymptotically uniforma ($f\sim const.$) for both Lﾂ思y flights and CTRWs. In contrast, the visitation patterns of humans is rather uneven, so that the frequency $f$ of the $k$th  most visited location follows
+
+\begin{equation}
+f_k ~k^{-\zeta}
+\end{equation}
+
+where $\zeta \approx 1.2 \pm 0.1$ (babarasi paper).
+
+
+\subsection{slight anisotropy}
 The propagator is anisotropic: There is equal chance that a jump will be negative or positive. However, the distribution of jump size is different: both are power law, but with different exponents.
-
-
-
-
 
 isotropy :
 \begin{equation}
@@ -68,75 +193,14 @@ W_j (t+\Delta t) = a W_{j-1}(t) + b W_{j+1}(t)
 with $a=b=1/2$. In case of anisotropy $\rightarrow  a \neq b$.
 
 
-\subsection{Number of distinct locations / Visitation frequency:}
 
-(A) The number of distinct locations $S(t)$ visited by a randomlymoving object is expected to follow:
-
-
-\begin{equation}
-S(t) \sim t^{\mu}
-\end{equation}
-
-
-where $\mu = 1$ for L思y flights [24] and $\mu = \beta$ for CTRW. {\bf [Here, it is unclear what visiting a distinct location means ]}
-The probability $f$ of a user to visit a given location is expected to be asymptotically uniforma ($f\sim const.$) for both L思y flights and CTRWs. In contrast, the visitation patterns of humans is rather uneven, so that the frequency $f$ of the $k$th  most visited location follows
+\subsection{Exploration versus Exploitation}
+Each new BayesNet iteration may be a combination of former iterations, or rather something new. It is difficult to determine if {\it exploration} occurs, by opposition to {\it exploitation}. The intuition is that if the sum of distances between the new node and all existing nodes (weighted by their iteration number) is larger than at the previous step, then more exploration occurs
 
 \begin{equation}
-f_k ~k^{-\zeta}
+\overline{JSD}(N) =  \sum_{n=0}^{N-1} \frac{JSD(n,N)}{n}
 \end{equation}
-
-where $\zeta \approx 1.2 \pm 0.1$ (babarasi paper).
-
-\subsection{Ultra Slow Diffusion}
-
-The CTRW model predicts that the mean square displacement (MSD) asymptotically follows $\langle \Delta x^2 (t) \rangle \sim t^{\nu}$ with $\nu = 2\beta /\alpha$
-
-
-
-\subsection{Jensen-Shannon Distance}
-
-JS distance : square root of the Jensen-Shannon (JS) divergence
-
-Illustration: Figure \ref{fig:decay}
-
-\begin{equation}
-\label{JS-divergence}
-JS-Divergence
-\end{equation}
-
-\begin{equation}
-\label{JS-distance}
-JS-Distance
-\end{equation}
-
-\subsection{Power Law Decay}
-
-Decay  of Jensen-Shannon Distance (JSD) 
-
-\begin{equation}
-\label{power_law_decay}
-JSD(t) = C \cdot t^{-\alpha},
-\end{equation}
-
-with $\alpha = 0.09$ and $C$ a constant, specific to the $simple$ and $complex$ models
-
- 
-\subsection{Stepwise Jumps}
-
-$\rightarrow$ distribution of jumps sizes
-
-Figure \ref{fig:jump_sizes}
-
-
-
-\subsection{Memory Effects / Waiting Times}
-
-Figure \ref{fig:waiting_times}
-
-
-\subsection{Reuse of former configurations}
 
 
 
 \subsection{Formulation of reuse, with memory}
-

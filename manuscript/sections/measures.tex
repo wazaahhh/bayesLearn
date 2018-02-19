@@ -1,6 +1,12 @@
 \section{Measures of Cognitive Distance}
 
-In this section, we will introduce various measures.  We use the square root of a measure called the Jensen Shannon Divergence as our measure of cognitive distance, but in order to understand the usefulness and reason behind this measure we need to first introduce some preliminary measures which the Jensen-Shannon Divergence builds on. 
+In this section, we will introduce various measures.  We use the square root of a measure called the Jensen Shannon Divergence as our measure of cognitive distance (CD). The performance score is then
+
+\begin{equation}
+S = 1 - CD.
+\end{equation}
+
+In order to understand the usefulness and reason behind this measure this section introduces some preliminary measures which the Jensen-Shannon Divergence builds on and then formally defines our measure of cognitive distance.    
   
 \subsection{The Shannon Entropy}
 
@@ -26,7 +32,7 @@ The simple system has $k=3$ binary variables and its maximum entropy (random typ
 
 \begin{figure}
 \noindent\makebox[\textwidth]{%      
-        \includegraphics[width=1\textwidth]{simplejoint.png}}
+        \includegraphics[width=1\textwidth]{figures/simplejoint.png}}
 \caption{The limiting distribution of the simple treatment and an example frequency distribution pertaining to 400 random realizations.}
 \label{fig:simplejoint} 
 \end{figure}
@@ -62,4 +68,20 @@ $D_{JS}(P | | Q)=\lambda*D_{KL}(P | | M) + (1-\lambda)*D_{KL}(Q | |M),$
 where $M=\lambda P + (1-\lambda) Q$ and $\lambda$ is usually, but not necessarily equal to $\frac{1}{2}$. In order for the measure to be symmetric, $\lambda$ has to be equal to $\frac{1}{2}$. 
 
 
-The value of the Jensen-Shannon divergence is always between $0$ and $1$; $0$, when the two distributions are the same and $1$ when the two distributions have orthogonal support. This measure quantifies the amount of information in bits, about which of the two distributions one bit of data was drawn from, given that it was drawn from the first distribution with probability $\lambda$ and from the second with probability $1-\lambda$. For example, if the two distributions are the same, any bit of data will render no information about which of the two identical distributions it was drawn from, while if the two distributions have orthogonal support, each bit of data gives exactly one bit of information. To state this in Bayesian terms: if the two distributions are the same, then we can not learn from data and our posterior probability about which of the two distribution that data was drawn from is equal to our prior ($\lambda$ for the first distribution). At the other extreme, if the distributions have orthogonal support, the posterior will put probability $1$ on the distribution that supports the data; one bit of data carries one bit of information. If the square-root of the Jensen-Shannon divergence is taken, the result is a metric known as the Jensen-Shannon distance. This is the distance metric we use to calculate distances between any two distributions.  We refer to it as Cognitive Distance. 
+The value of the Jensen-Shannon divergence is always between $0$ and $1$; $0$, when the two distributions are the same and $1$ when the two distributions have orthogonal support. This measure quantifies the amount of information in bits, about which of the two distributions one bit of data was drawn from, given that it was drawn from the first distribution with probability $\lambda$ and from the second with probability $1-\lambda$. For example, if the two distributions are the same, any bit of data will render no information about which of the two identical distributions it was drawn from, while if the two distributions have orthogonal support, each bit of data gives exactly one bit of information. To state this in Bayesian terms: if the two distributions are the same, then we can not learn from data and our posterior probability about which of the two distribution that data was drawn from is equal to our prior ($\lambda$ for the first distribution). At the other extreme, if the distributions have orthogonal support, the posterior will put probability $1$ on the distribution that supports the data; one bit of data carries one bit of information. 
+
+\subsection{Cognitive Distance and the Performance Score}
+
+If the square-root of the Jensen-Shannon divergence is taken, the result is a metric known as the Jensen-Shannon distance. This is the distance metric we use to calculate distances between any two distributions.  We refer to it as Cognitive Distance (CD):
+
+\begin{equation}
+CD(P, Q) = \sqrt{D_{JS}(P | | Q)}
+\end{equation}
+
+and to remind the reader, our performance score of person $i$ at time $t$, (supressing the index $i$), $S_t$, is 
+
+\begin{equation}
+S_t = 1 - CD(M_t, T),
+\end{equation}
+
+where $M_t$ is some person's Bayes Net model, at time $t$, of the true stochastic system, $T$. 
