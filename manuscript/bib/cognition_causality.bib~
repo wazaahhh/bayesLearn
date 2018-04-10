@@ -1,0 +1,183 @@
+@article{becker1964measuring,
+  title={Measuring utility by a single-response sequential method},
+  author={Becker, Gordon M and DeGroot, Morris H and Marschak, Jacob},
+  journal={Behavioral science},
+  volume={9},
+  number={3},
+  pages={226--232},
+  year={1964},
+  publisher={Wiley Online Library}
+}
+
+@article{van2003self,
+  title={Self-organization of cognitive performance.},
+  author={Van Orden, Guy C and Holden, John G and Turvey, Michael T},
+  journal={Journal of Experimental Psychology: General},
+  volume={132},
+  number={3},
+  pages={331},
+  year={2003},
+  publisher={American Psychological Association}
+}
+
+
+
+
+@article{steyvers2003inferring,
+  title={Inferring causal networks from observations and interventions},
+  author={Steyvers, Mark and Tenenbaum, Joshua B and Wagenmakers, Eric-Jan and Blum, Ben},
+  journal={Cognitive science},
+  volume={27},
+  number={3},
+  pages={453--489},
+  year={2003},
+  publisher={Elsevier}
+}
+
+
+@article{wagenmakers2004estimation,
+  title={Estimation and interpretation of 1/f$\alpha$ noise in human cognition},
+  author={Wagenmakers, Eric-Jan and Farrell, Simon and Ratcliff, Roger},
+  journal={Psychonomic bulletin \& review},
+  volume={11},
+  number={4},
+  pages={579--615},
+  year={2004},
+  publisher={Springer}
+}
+
+@article{farrell2006,
+  title={1/f noise in human cognition: Is it ubiquitous, and what does it mean?},
+  author={Farrell, Simon and Wagenmakers, Eric-Jan and Ratcliff, Roger},
+  journal={Psychonomic bulletin \& review},
+  volume={13},
+  number={4},
+  pages={737--741},
+  year={2006},
+  publisher={Springer}
+}
+
+
+@article{hills2006animal,
+  title={Animal Foraging and the Evolution of Goal-Directed Cognition},
+  author={Hills, Thomas T},
+  journal={Cognitive Science},
+  volume={30},
+  number={1},
+  pages={3--41},
+  year={2006},
+  publisher={Wiley Online Library}
+}
+
+
+@book{pearl2009causality,
+  title={Causality},
+  author={Pearl, Judea},
+  year={2009},
+  publisher={Cambridge university press}
+}
+
+@book{Pearl2009CMR,
+ author = {Pearl, Judea},
+ title = {Causality: Models, Reasoning and Inference},
+ year = {2009},
+ isbn = {052189560X, 9780521895606},
+ edition = {2nd},
+ publisher = {Cambridge University Press},
+ address = {New York, NY, USA},
+} 
+
+@article{holden2009dispersion,
+  title={Dispersion of response times reveals cognitive dynamics.},
+  author={Holden, John G and Van Orden, Guy C and Turvey, Michael T},
+  journal={Psychological review},
+  volume={116},
+  number={2},
+  pages={318},
+  year={2009},
+  publisher={American Psychological Association}
+}
+
+@article{kello2010scaling,
+  title={Scaling laws in cognitive sciences},
+  author={Kello, Christopher T and Brown, Gordon DA and Ferrer-i-Cancho, Ramon and Holden, John G and Linkenkaer-Hansen, Klaus and Rhodes, Theo and Van Orden, Guy C},
+  journal={Trends in cognitive sciences},
+  volume={14},
+  number={5},
+  pages={223--232},
+  year={2010},
+  publisher={Elsevier}
+}
+
+@article{dixon2012multifractal,
+  title={Multifractal dynamics in the emergence of cognitive structure},
+  author={Dixon, James A and Holden, John G and Mirman, Daniel and Stephen, Damian G},
+  journal={Topics in Cognitive Science},
+  volume={4},
+  number={1},
+  pages={51--62},
+  year={2012},
+  publisher={Wiley Online Library}
+}
+
+@article{riley2012dynamics,
+  title={Dynamics of cognition},
+  author={Riley, Michael A and Holden, John G},
+  journal={Wiley Interdisciplinary Reviews: Cognitive Science},
+  volume={3},
+  number={6},
+  pages={593--606},
+  year={2012},
+  publisher={Wiley Online Library}
+}
+
+
+@article{hills2012optimal,
+  title={Optimal foraging in semantic memory.},
+  author={Hills, Thomas T and Jones, Michael N and Todd, Peter M},
+  journal={Psychological review},
+  volume={119},
+  number={2},
+  pages={431},
+  year={2012},
+  publisher={American Psychological Association}
+}
+
+@inproceedings{abbott2015random,
+  title={Random walks on semantic networks can resemble optimal foraging.},
+  author={Abbott, Joshua T and Austerweil, Joseph L and Griffiths, Thomas L},
+  booktitle={Neural Information Processing Systems Conference; A preliminary version of this work was presented at the aforementined conference.},
+  volume={122},
+  number={3},
+  pages={558},
+  year={2015},
+  organization={American Psychological Association}
+}
+
+
+
+@article{bramley2015conservative,
+  title={Conservative forgetful scholars: How people learn causal structure through sequences of interventions.},
+  author={Bramley, Neil R and Lagnado, David A and Speekenbrink, Maarten},
+  journal={Journal of Experimental Psychology: Learning, Memory, and Cognition},
+  volume={41},
+  number={3},
+  pages={708},
+  year={2015},
+  publisher={American Psychological Association}
+}
+
+@article{montez2015role,
+  title={The role of semantic clustering in optimal memory foraging},
+  author={Montez, Priscilla and Thompson, Graham and Kello, Christopher T},
+  journal={Cognitive science},
+  volume={39},
+  number={8},
+  pages={1925--1939},
+  year={2015},
+  publisher={Wiley Online Library}
+}
+
+
+
+
