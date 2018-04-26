@@ -53,6 +53,8 @@ The experiment conducted at Columbia University Social Science laboratory asked 
 
 This article is organized as follows. We first report on the experimental results, in particular deviations from a memoryless L\'evy Walks/Flights, such as peculiar returns to previously visited solutions, {\bf anomalous mean square displacement following return and recombination [more work is needed here]}, explorations beyond the cognitive frontier, as well as waiting-time and long-memory processes. We then show how memory, exploration and recombination influence performance. {\bf Building on theoretical consideration in conjunction with observed stylized facts, we test a model of mechanics of cognition in situations in which people tackle hard problems [remains to be done. It may incorporate some Hawkes Processes, but not 100\% sure yet]}. 
 
+\subsection{Experiment}
+In our experiment, participants were asked to reverse engineer a multidimensional stochastic process, explicitly expressed in the form of a Bayesian network. They were given 40 minutes, and all changes made were recorded at a 1 second resolution. Participants trying to find the best solution faced a though problem: The {\it simple} process had 3 binary variables, which means that the problem can be thought of as the simultaneous estimation of (2^3) 8 parameters, or the 8 dimensional vector $\mathbf{s}$ with $0 \l\eqslant s_k  \leqslant 1$ for $k = \{1,...,8\}$ (resp. $k = \{1,..., 16\}$ for the 4 variable {\it complex} stochastic system).
 
 
 \clearpage
@@ -76,34 +78,15 @@ This article is organized as follows. We first report on the experimental result
  
  %Here, we document how such frustrating and somewhat irrational situations may stem from evolutionary homology \cite{evolutionary_homology}, that is mental search properties may share conserved neural substrates with similar neuro-molecular processes guiding spatial search in animals and modulating the control of human attention \cite{hills2006animal}. We show that search strategies inherited from food \cite{food_foraging} and resource \cite{resource_foraging} foraging lead to a form of ``hard-wired bounded rationality" when tackling hard problems.\\
 
-%This behavior is at odds with L\'evy walks food search strategies 
-%\cite{iswanathan2011physics} used by number of animals 
-%\cite{viswanathan1996levy,reynolds2007displaced,edwards2007revisiting,ramos2004levy} and hunter gatherers 
-%\cite{brown2007levy}. L\'evy walks which displacement obeys a power law distribution 
-%$P(R > \Delta r) \sim \Delta r^{\alpha}$ with $ 0 < \alpha \leqslant 2 $ are known maximize 
-%displacement through a super-diffusive process, while minimizing the probability to return to an 
-%already visited site (on the contrary to Brownian motion \cite{humphries2010environmental,mendez2013stochastic}). In 
-%particular, the food search process in nature has also been found to be optimal $\alpha \approx 1$ 
-%\cite{viswanathan1999optimizing}, in the case of Hadza hunter-gatherers in Tanzania 
-%\cite{raichlen2014evidence}, and for the dissemination of mussels \cite{de2011levy}. In the latter 
-%case, the optimal search process stems from the cooperative organization of mussels, and how 
-%this cooperation shapes the environment \cite{de2011levy}. Human mobility traced by banknote circulation \cite{brockmann2006scaling} or mobile phone tracking \cite{song2010modelling,rhee2011levy} also exhibits highly regular L\'evy walk patterns \cite{gonzalez2008understanding}.
+\subsection{L\'evy Flight / CTRW}
+We first find that the search process approximately follows a continuous time L\'evy flight process, where waiting times between moves are random variables.  Both the distributions of displacement (Figure \ref{fig:pdfs}A ) and waiting times (Figure \ref{fig:pdfs}B ) are best described by power law distributions  (Probability density function of displacement $pdf(\Delta r) = \Delta r^{-\alpha -1}$ with $\alpha = 0.40(5)$.  Note that this is NOT a L\’evy flight (for which $\alpha$ would have to be between 1 and 3.  {\bf B.} Probability density function of waiting time $\Delta t$ $pdf(\Delta t) = \Delt\
+a t^{-\beta -1}$ with 2 regimes : $\beta_{\Delta t < 125} = 0.38(4)$ and $\beta_{\Delta t > 125} = 1.59(5)$. Distributions of $\Delta r$ and $\Delta t$ are equivalent for the simple and complex treatments.)
 
-%There is suggestive evidence that some cognitive mechanisms, such as information/memory retrieval follows a L\'evy walk \cite{hills2012optimal} with some limited analogy with optimal foraging \cite{rhodes2007human} {\bf (in \cite{rhodes2007human}, it's unclear why the waiting times should be optimal with $\mu \rightarrow 1$. The optimality is in space, optimality is less clear in time)}. {\bf (random walks \cite{abbott2015random})}
+{\bf Problem :} Such CTRW process should normally follow ballistic diffusion characterized by mean square displacement (MSD) and diffusion $\sim t^{\mu}$ with  $\mu_{Levy} = 1$ \
+or super-diffusion $\mu_{CTRW} = \beta$ \cite{21,23}). Here, however, mean square displacement (MSD) decays as $\sim t^{\mu}$ with $\mu_{simple} =-0.23(2)$ and $\mu_{complex} =-\
+ 0.26(1)$ showing a much slower convergence than would be expected.
 
-%For some time now, cognitive scientists have posed that modeling people's beliefs about causation in the material world provides an effective explanatory framework for how we process information and learn from these observations \cite{Griffiths2008}.  Probabilistic causes and effects, in other words, make up an important construct we seem to make use of when we seek to understand our world.  Bayes Nets are well-defined mathematical objects corresponding to an intuitive representation of causal beliefs.  They are easy to manipulate, do inference with and use as a means to compare different beliefs.  The kinds of Bayes Nets that have been allowed for in experimental settings up to this point, however, have been extremely simplistic and there has been an unanswered call for learning experiments with increased complexity (Griffiths?).  Our work is to our knowledge the first answer to this call.
 
-%From financial stability to the stability of democracies, beliefs play a central role in our explanation of many phenomena. In the social sciences, these beliefs are often conceptualized as probabilistic assessments over states of the world.  However, they are derived from coherent belief systems people hold in their minds regarding how the world works as supported by recent work in cognitive science \cite{lombrozo2006structure, anderson1990cognitive}.  How do humans learn in simple and in complex systems?  How efficiently do they explore the space of possible beliefs and how closely is the direction of exploration tied to experience?  Bayesian approaches of learning would not be feasible for learning in realistically complex systems, given recall constraints and they are not defined in cases where initial beliefs are such that they put zero weight on some possible outcomes.
 
-%Our work presents new experimental results on the rate at which people learn in more or less complex environments. We find that learning rates are much slower than they would be if learners were Bayesians, as had been proposed in older economic theories \cite{Boyer84, Prescott72, Rothschild74, McLennan84, Mirman84, Easley89, Kiefer89}. We also find that the learning rate is slightly higher when people build models of systems that are less complex and that even if the rates were identical accross levels of complexity, accuracy is always higher when the system is structurally simpler because initial models are closer aligned with reality.
 
-%When searching for solutions to outstanding problems, in this case the formation of coherant belief structures that explain experience, humans must come up with innovative solutions.  We show that their strategies look a lot like a class of random search processes in which complete random guessing is strategically combined with the consolidation of past and current experience. We show how people shape their beliefs, starting with complete guesswork through a process that can be accurately modeled as a L'evy random search process, which involves both synthesis of current knowledge (mental exploitation) and out-of-the box mental exploration (see Figure \ref{fig:schematic}). Such random search processes are ubiquitous across the life sciences, in cognitive science, computer science  and artificial intelligence. We then measure how this process leads to convergence, albeit slow, to the correct stochastic solution.
 
-%As can be seen in Figure \ref{fig:decay}, the distance between a person's evolving belief system about some physical system and the long-run absorbing distribution, which we interpret as a performance score, decays with time in a very specific way:
-%
-%\begin{equation}
-%\label{ }
-%d(belief_{i, t}, absorbing distribution) = \alpha*t^{-\beta_i}
-%\end{equation}
-%
-%The functional form of human learning in the context of our experiment, then, is the same as for the Bayesian learner, but the decay rate, $\beta$, of a human learner is much smaller than that of a Bayesian.

@@ -3,9 +3,6 @@
 \subsection{Return to previously visited sites}
 For both experimental treatments of the Bayesian network reverse engineering experiment \cite{}, participants made heavy use of memory as they returned to previous model iterations, following a power law (see Figure \ref{fig:2}A and SI \ref{solutionspace_partitions} for details on solution space partitionning).\\
 
-Return to previously visited sites : $\mathrm{pdf}(V_r) \sim {V_r}^{- \gamma -1}$, with $\gamma_{simple} = 1.6(1)$ and $\gamma_{complex} = 1.5(1)$ $\rightarrow$ tendency to return to previously visited sites : This goes against the imperative to visit new sites (maximize $S_T$) in order to reduce $D_{min}$ (c.f. Figures \ref{fig:Dmin_vs_St}B and \ref{fig:Dmin_vs_St}C). Moreover, given the large number of sites [$10^{8}$ (resp. $10^{16}$) in the simple (resp. complex) case], it is remarkable that participants tend to return to exactly the same (tiny) spots. This suggest some stickiness of action in problem solving.
-
-
 \begin{figure}[h!]
 \begin{center}
 %\includegraphics[width=16cm]{figures/Figure1.eps}
@@ -20,10 +17,6 @@ Return to previously visited sites : $\mathrm{pdf}(V_r) \sim {V_r}^{- \gamma -1}
 
 Memory also playes a central role in the recombination of multiple previously explored models into new ones. We find strong influence of a focal model on subsequent models. On average over all participants in each treatment, influence $I$ decays as $I \sim t^{-\chi}$ with $\chi = 0.48(2)$ ($p < 0.01$ and $R > 0.32$)  (Figure \ref{fig:2}B). Because the time decay exhibits a power law with exponent $\chi < 1$, on average, models proposed in the past never vanish from memory, and may be reused (resp. inspired from). Assuming that {\bf [As ?]} the rate of proposed models remains roughly constant  overtime (see SI \ref{}?), as time passes, it gets statistically harder to come up with new solutions (``because minds get imprinted by past experience"). 
 
-\subsection{Mean Square Displacement}
-With the reported displacement and waiting time functions (c.f., Figures \ref{fig:pdfs}A and \ref{fig:pdfs}B), according to theory the diffusion process should be ballistic, and mean square displacement (MSD) should increase as a result. For humans searching for a small class of optimal solutions in a large problem space, this is not the case, and MSD decays as $\sim t^{\mu}$ with $\mu_{simple} =-0.23(2)$ and $\mu_{complex} =- 0.26(1)$ showing a slow convergence (on the contrary of a normal L\'evy flight / CTRW, which is characterized by respectively diffusion $\mu_{Levy} = 1$ or super-diffusion $\mu_{CTRW} = \beta$ \cite{21,23}). 
-
-This suggests additional constraints, such as periodic return to previously visited problem sub-spaces, or new solutions that integrate information from previously proposed solutions following an alternation of {\it exploration} and {\it exploitation} mechanisms \cite{march1991exploration}. The former may be related to a kind of {\it preferential return} in the physical space \cite{song2010modelling} and to some extent to some hardwired instinct to return to previously visited resource rich spots with hope that resource renewal has occurred \cite{}. The {\it exploration} vs. {\it exploitation} hypothesis is more related to how humans deal with complicated abstract (non-tangible) problems, such as innovation \cite{march1991exploration}.
 
 \subsection{Recombination of previously proposed solutions}
 
@@ -49,22 +42,18 @@ We find that displacement has an influence on improvement. As one could surmise,
 
 There is no clear relation between time spent on taking the decision to move and performance {\bf [show $\Delta D_{jsd}$ versus $\Delta t$] if relevant: question here is whether waiting leads to better results.}.
 
-However, the decision to make a larger displacement takes more time. For $\Delta r < 0.2$, the waiting time before a displacement decision is made scales as $\Delta t \sim \Delta r^{\gamma}$ with $\gamma_{simple} = 0.11(1)$ [resp. $\gamma_{complex} = 0.13(1)$]. For $\Delta r > 0.2$, the waiting time before a displacement decision is taken get disproportionally long (up to tens of seconds on average for displacement of 0.7 (i.e., $\approx 25\%$ of the maximum displacement distance). On both panels, blue and red areas show the 25th percentile confidence intervals.
+While there is no clear relation between time spent between moves and performance {\bf [$\Delta D_{jsd}$ versus $\Delta t$]}, the decision to make a larger displacement takes more time. For $\Delta r < 0.2$, the waiting time before a displacement decision is made scales as $\Delta t \sim \Delta r^{\gamma}$ with $\gamma_{simple} = 0.11(1)$ [resp. $\gamma_{complex} = 0.13(1)$]. For $\Delta r > 0.2$, the waiting times before a displacement decision is taken get disproportionally long (up to tens of seconds on average for a displacement of 0.7 (i.e., $\approx 25\%$ of the maximum displacement distance). On both panels, blue and red areas show the 25th percentile confidence intervals.
 
 
 {\bf [show $\Delta D_{jsd}$ versus Explore and Exploit]}
 
 Influence of ``explorative" solutions versus ``exploitative" solutions ?
 
-Influence of moves than improve score rather than those that don't ?
+Influence of moves that improve scores rather than those that don't ?
 
 How does ``time in the game'' factor in?
 
 Minimum distance $D_{min}$ (between the best model and the true model) exhibits a scaling as a function of the number of distinct sites visited $S_{T}$. $D_{min} \sim S_{T}^{\gamma}$ with resp. $\gamma_{simple} = -0.20(4)$ and $\gamma_{complex} = - 0.13(3)$. {\bf C.} The number of visited sites over time $S_t$ is a linear function of time $t$. Hence, the number of distinct visited sites is a predictor of the minimum distance $D_{min}$ achieved. The result also holds for average distance
-
-
-
-
 
 %\section{Results (old)}
 %
