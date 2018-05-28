@@ -1,17 +1,36 @@
 \section{The Experiment} 
 
-Our data comes from an experiment which we conducted at Columbia University's Social Science laboratory.  Participants were given a graphical environment in which they could express their exact believes with respect to the causal structure and probabilistic relationships between 3 or 4 related binary variables, depending on treatment.  Participants were compensated according to their predictions and their predictions' congruence with a series of realizations.  Participants were enabled to dynamically update their models.   The incentives to make good predictions were determined according to an incentive scheme that is standard in experimental economics known as the Becker–DeGroot–Marschak method {\bf [citation ???]}.  The method implies a quadratic loss function. 
+Our data comes from an experiment which we conducted at Columbia University's Social Science laboratory.  Participants were given a graphical environment in which they could express their exact believes with respect to the causal structure and probabilistic relationships between 3 or 4 related binary variables, depending on treatment.  Participants were compensated according to their predictions and their predictions' congruence with a series of realizations.  Participants were enabled to dynamically update their models.   The incentives to make good predictions were determined according to an incentive scheme that is standard in experimental economics known as the Becker–DeGroot–Marschak method \cite{Becker1964, Moldovanu98}.  The method implies a quadratic loss function. 
 
 \section{Experimental Design and Implementation}
 
-{\bf [pictures, screenshots ???]}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=12cm]{figures/SimpleModel.pdf}
+\caption{\footnotesize{The simple treatment}}
+\label{fig:simp}
+\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=12cm]{figures/Complex.pdf}
+\caption{\footnotesize{The complex treatment}}
+\label{fig:comp}
+\end{center}
+\end{figure}
+
+
+%{\bf [pictures, screenshots ???]}
 
 \subsection{Causal Reasoning about a set of Binary Variables}
 
 Here, we describe and informally define the kinds of systems that experimental participants reasoned about as they participated in our experiment on causal reasoning. 
 
-{\bf [quite short for a paragraph ...]}
+%{\bf [quite short for a paragraph ...]}
 
+Figures \ref{fig: simp} and \ref{fig: comp} depict simple and complex structural causal representations (the simplest possible representations for the respective joint distributions) of some 3 and 4 variable joint distributions, as experimental participants would have seen them during the experiments, if they had identified the simplest representations that correctly describe the joint distributions that gave rise to the actual observations that they made. All previous observations are displayed on a panel in the graphical user interface of Betting-is-Believing (the experimental platform described in \cite{castnerForthcoming}).  In other words, there are other graphical representations that could describe the same joint distribution, but they would have to be necessarily more structurally complex and are thus harder to identify. Participants are paid with expected payoffs according to the squared distance of the probabilities that they pose for joint events and the actual frequencies of these events, according to a slight adoptation of the Becker–DeGroot–Marschak method \cite{becker1964measuring, Moldovanu98}.
+       
 %\subsubsection{The noisy-or operator \citep{Pearl88}}
 
 %For systems with only binary variables we might think of causation in the following way as suggested by Judea Pearl in 1988.  If causation only involves 2 variables, say $A$ and $B$, where $A$ has a positive causal effect on $B$, then things are simple:

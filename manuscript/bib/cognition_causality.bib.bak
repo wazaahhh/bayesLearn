@@ -160,14 +160,6 @@
   Url                      = {https://onlinelibrary.wiley.com/doi/abs/10.1002/bs.3830090304}
 }
 
-@Article{Moldovanu98,
-  Title                    = {Goethe’s Second-Price Auction},
-  Author                   = {Author(s) Benny Moldovanu and Manfred Tietzel and Benny Moldovanu and Manfred Tietzel},
-  Journal                  = {Journal of Political Economy},
-  Year                     = {1998},
-  Pages                    = {854--859}
-}
-
 @Article{montez2015role,
   Title                    = {The role of semantic clustering in optimal memory foraging},
   Author                   = {Montez, Priscilla and Thompson, Graham and Kello, Christopher T},
