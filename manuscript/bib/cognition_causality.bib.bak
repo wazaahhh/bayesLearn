@@ -80,9 +80,24 @@
   Publisher                = {Springer}
 }
 
+@Book{Gigerenzer2001,
+  Title                    = {Bounded Rationality: {T}he adaptive toolbox},
+  Author                   = {Gigerenzer, Gerd and Selten, R.},
+  Publisher                = {Cambridge: The MIT Press},
+  Year                     = {2001},
+
+  Added-at                 = {2009-10-13T14:06:45.000+0200},
+  Biburl                   = {https://www.bibsonomy.org/bibtex/28b5243023145e1df467302051cd25358/schultem},
+  Interhash                = {7e8b08f0e25aac1c9154fa6c32843354},
+  Intrahash                = {8b5243023145e1df467302051cd25358},
+  Keywords                 = {ABC},
+  Owner                    = {Michael},
+  Timestamp                = {2009-10-13T14:06:49.000+0200}
+}
+
 @Book{,
   Title                    = {A Dictionary of Statistics (2 rev)},
-  Author                   = {Graham Upton,  Ian Cook},
+  Author                   = {Graham Upton, Ian Cook},
 
   Owner                    = {johannes},
   Timestamp                = {2018.05.28}
@@ -160,6 +175,14 @@
   Url                      = {https://onlinelibrary.wiley.com/doi/abs/10.1002/bs.3830090304}
 }
 
+@Article{Moldovanu98,
+  Title                    = {Goethe’s Second-Price Auction},
+  Author                   = {Author(s) Benny Moldovanu and Manfred Tietzel and Benny Moldovanu and Manfred Tietzel},
+  Journal                  = {Journal of Political Economy},
+  Year                     = {1998},
+  Pages                    = {854--859}
+}
+
 @Article{montez2015role,
   Title                    = {The role of semantic clustering in optimal memory foraging},
   Author                   = {Montez, Priscilla and Thompson, Graham and Kello, Christopher T},
@@ -201,6 +224,21 @@
   Volume                   = {3},
 
   Publisher                = {Wiley Online Library}
+}
+
+@Book{Rubinstein98,
+  Title                    = { Modeling bounded rationality / Ariel Rubinstein },
+  Author                   = { Rubinstein, Ariel. },
+  Publisher                = { MIT Press Cambridge, Mass. ; London },
+  Year                     = { 1998 },
+
+  Catalogue-url            = { https://nla.gov.au/nla.cat-vn1811837 },
+  ISBN                     = { 0262181878 0262681005 },
+  Language                 = { English },
+  Life-dates               = { 1998 - },
+  Pages                    = { viii,208 p. : },
+  Subjects                 = { Decision making.; Economic man.; Game theory.; Rational expectations (Economic theory) },
+  Type                     = { Book }
 }
 
 @Article{Spiegler2016,
@@ -245,6 +283,18 @@
   Booktitle                = {Trends in Cognitive Sciences},
   Year                     = {2006},
   Pages                    = {309--318}
+}
+
+@Article{tsang2008computational,
+  Title                    = {Computational intelligence determines effective rationality},
+  Author                   = {Tsang, Edward PK},
+  Journal                  = {International Journal of Automation and Computing},
+  Year                     = {2008},
+  Number                   = {1},
+  Pages                    = {63--66},
+  Volume                   = {5},
+
+  Publisher                = {Springer}
 }
 
 @Article{van2003self,
