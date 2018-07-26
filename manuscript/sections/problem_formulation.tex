@@ -1,8 +1,7 @@
 \section{Problem Formulation}
 \subsection{Intuition}
 
-Random search processes occur in many areas, from the foraging behavior
-of bacteria and animals \cite{}, to human mobility \cite{}, to computer search and optimization algorithms \cite{}.  When searching for solutions to outstanding problems, humans must come up with innovative solutions, which involve random search (e.g., gathering information, etc), along with the consolidation of past and current experience.
+Random search processes occur in many areas, from the foraging behavior of bacteria and animals \cite{}, to human mobility \cite{}, to computer search and optimization algorithms \cite{}.  When searching for solutions to outstanding problems, humans must come up with innovative solutions, which involve random search (e.g., gathering information, etc), along with the consolidation of past and current experience.
 
 Here, we show how people go through the resolution of a complicated problem, starting from no knowledge through L'evy random search, involving synthesizing current knowledge versus exploring out-of-the box (see Figure \ref{fig:schematic}). We then measure how this process leads to convergence, albeit very slow convergence, to the solution.
 
@@ -10,7 +9,7 @@ Here, we show how people go through the resolution of a complicated problem, sta
 
 \subsection{Simple case}
 
-The intuition is that large jumps lead to super-diffusion while long-waiting time lead to sub-diffusion. Here, we see both large jumps and long waiting time. There is thus a tension between the two factors and how they respectively influence the random search process. However, both are correlated: larger waiting times lead to larger jumps, yet with a decreasing marginal function ($\Delta r \sim {(\Delta t)}^{\nu},~with ~\nu \approx 0.23 < 1$). This suggests that waiting time may trigger more aging (sub-diffusion), compared to long-range search (i.e., super-diffusion), which has been found to be an optimal search \cite{optimal_random_search}. In turn, the
+The intuition is that large jumps lead to super-diffusion while long-waiting times lead to sub-diffusion. Here, we see both large jumps and long waiting times. There is thus a tension between the two factors and how they respectively influence the random search process. However, both are correlated: larger waiting times lead to larger jumps, yet with a decreasing marginal function ($\Delta r \sim {(\Delta t)}^{\nu},~with ~\nu \approx 0.23 < 1$). This suggests that waiting times may trigger more aging (sub-diffusion), compared to long-range search (i.e., super-diffusion), which has been found to be an optimal search \cite{optimal_random_search}. 
 
 
 
@@ -31,7 +30,7 @@ P(\Delta t) \sim t^{-(1+\beta)},~with~\beta = 0.46(3).
 
 with a change of regime for $\Delta t > 100$ (in that case: $\beta = 1.65(1)$).
 
-\subsubsection{dependence between $\Delta r$ and $\Delta t$}
+\subsubsection{Dependence between $\Delta r$ and $\Delta t$}
 
 nb: We find a dependence (Spearman rank correlation $corr = 0.32$) between  $\Delta r$ and $\Delta t$, which can be approximated by
 
@@ -79,7 +78,7 @@ S(t) \sim t^{\mu},~with~\mu = 0.85(0)
 where $M=\frac{1}{2}(P+Q)$
 
 
-The Jensen-Shannon Distance (JSD) is a measure of mutual information. We use it to compare the distance of a BayesNet model from the true model (see Figure \ref{fig:decay}), and between models.\\
+The Jensen-Shannon Distance (JSD) is a measure of mutual information. We use it to compare the distance of a Bayes Net model from the truth (see Figure \ref{fig:decay}), and between models.\\
 
 
 Score:
