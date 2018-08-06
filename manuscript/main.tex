@@ -10,6 +10,8 @@
 \usepackage{indentfirst}
 %\usepackage{cite}
 
+\usepackage{xcolor}
+
 \newcommand{\be}{\begin{equation}}
 \newcommand{\ee}{\end{equation}}
 \newcommand{\ba}{\begin{eqnarray}}
@@ -25,9 +27,7 @@
 
 \author{Johannes Castner}
 \email{johannes@collectiwise.com}
-\affiliation{Columbia Universtity, New York}
-
-
+\affiliation{University of Columbia, New York, United States of America}
 
 
 \date{\today}
@@ -41,21 +41,18 @@
 \maketitle
 
 \input{sections/intro}
-%\input{sections/background}
-
+\input{sections/background}
+\input{sections/experiment}
 \input{sections/results}
-\input{sections/model}
+%\input{sections/model}
 \input{sections/discussion}
-%\input{sections/conclusion}
+\input{sections/conclusion}
 
 \clearpage
-\input{sections/methods}
+%\input{sections/methods}
 
 \bibliographystyle{apsrev4-1}
 \bibliography{bib/references,bib/cognition_causality,bib/levyflight_foraging,bib/misc,bib/orgsci}
-
-\clearpage
-\input{sections/figures}
 
 \clearpage
 %\input{sections/SI}
@@ -68,16 +65,15 @@
 \setcounter{equation}{0}
 
 
-\begin{center}
-{\Large Supplementary Information}
-\vspace{3cm}
-\end{center}
+%\begin{center}
+%{\Large Supplementary Information}
+%\vspace{3 cm}
+%\end{center}
 
-\input{sections/SI}
-\input{sections/litreview}
-\input{sections/problem_formulation}
-\input{sections/measures}
-
+%\input{sections/SI}
+%\input{sections/litreview}
+%\input{sections/problem_formulation}
+%\input{sections/measures}
 
 \end{document}
 

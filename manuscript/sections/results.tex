@@ -1,31 +1,140 @@
-\section{Experimental Results}
+\section{Results}
+Our study aims to exhibit and characterize the fine-grained search patterns of the human mind, when confronted with a hard problem. Here, the hard problem consists in being incentivized to reverse-engineering a Bayesian network (a standard task to probe {\bf XXXX} in cognitive science \cite{}) with 3-nodes (treatmend 1 : 8 conditional probabilities) and with 4 nodes (treatment 2: 16 conditional probabilities). Our fine-grained capture of trials (at 1 second resolution over 40 minutes) allows us to characterize the fine-grained dynamics of human search in abstract spaces. At first sight, the patterns resemble those of resource hunting by animals \cite{}Êand humans hunter-gatherers \cite{}, yet with some specificities, which seem to limit human performance when solving abstract problems.\\
 
-\subsection{Return to previously visited sites}
-For both experimental treatments of the Bayesian network reverse engineering experiment \cite{castnerForthcoming}, participants made use of various time scales of memory as they returned to previous model iterations, following a power law (see Figure \ref{fig:2}A and SI \ref{solutionspace_partitions} for details on solution space partitioning).\\
+In this section, we first characterize the anomalous super-diffuse nature of the search process, and explain how it differs from other animal and human search patterns found. We then turn to define and characterize how much individuals tend to explore beyond their ``cognitive frontier" versus trying to re-arrange from within the space they have explored already. We finally show memory plays a special role in the search process, and we exhibit some trade-offs that humans seem to face when they attempt to converge to the correct Bayesian network design.
+
+%\begin{figure}[h!]
+%\begin{center}
+%\includegraphics[width=12cm]{figures/figure2.eps}
+%\caption{\footnotesize{Simplified diagram of exploration and recombination on a plane: {\bf A. Recombination:} iteration {\bf e'} does not incorporate new information. It is a convex combination of all previous proposed solutions (i.e., $\{a,b,c,d\}$).  {\bf B. Exploration:} the average distance between iteration {\bf e} and all previous iterations is larger than half of the maximum distance between any previous proposed solutions. Exploration is not memoryless: {\bf e} is closer to {\bf c} and {\bf d} than {\bf a} and {\bf b}. }}
+%\label{fig:2}
+%\end{center}
+%\end{figure}
+
+\subsection{An anomalous Super-Diffusive Process}
+Humans, like many other animals \cite{viswanathan1996levy,ramos2004levy,reynolds2007displaced}, use efficient strategies to search for resources over large areas \cite{brown2007levy,rhodes2007human}. These L\'evy walk strategies alternate between many small local displacements and a few long range displacements. Namely, the distribution of displacements obeys a power law: 
+
+\begin{equation}
+\label{displacements}
+pdf(\Delta r) = \Delta r^{-\alpha -1}.
+\end{equation}
+
+We find that displacements between proposed models (on average over all participants) follow a similar power law distribution with $\alpha = 0.40(5)$ (see Figure \ref{fig:1}B). In addition, the distribution of waiting times $\Delta t$ between two iterations of model propositions, also follows a power law: 
+
+\begin{equation}
+\label{wtimes}
+pdf(\Delta t) = \Delta t^{-\beta -1},
+\end{equation}
+
+with 2 regimes : $\beta_{\Delta t < 125} = 0.38(4)$ and $\beta_{\Delta t > 125} = 1.59(5)$. Distributions of $\Delta r$ and $\Delta t$ are equivalent for the simple and complex treatments. Together, equations \ref{displacements} and \ref{wtimes} define a Continuous Time Random Walk (CTRW) \cite{montroll1965random}, a process which describes another flavour of foraging search in ecological systems \cite{book_ecological_systems,humphries2014optimal}. The observed displacement exponent is significantly smaller, compared to optimal L\'evy walks of search in ecosystems, typically found close to  $\alpha = 1$ \cite{reynolds2007displaced}. Such an exponent is mathematically optimal for search of sparse solutions in large problem spaces, where it is naively assumed that search is a memoryless process \cite{viswanathan1999optimizing, edwards2007revisiting,song2010modelling,viswanathan2011physics}. \\
+
+\subsection{Memory in L\'evy Walks/Flights}
+
+Unlike such naive memoryless processes, human search exhibits repetition, which implies that humans make use of their memory on all time scales. For instance, evidence from online auctions \cite{radicchi2012rationality}  suggests that an optimal search strategy ($\alpha = 2 $) can be reached by humans when they are subjected to evolutionary forces \cite{radicchi2012evolution}. 
+Sedentary humans (e.g., living in cities) also exhibit repeated mobility patterns, such as travel between home and work places, with short displacements around a few areas of particular interest.  These regularities are punctuated by travels beyond the borders of the city, to other cities, regions or countries \cite{brockmann2006scaling,gonzalez2008understanding,song2010modelling}. 
+Using mobile phone traces, Song et al.  have proposed a modified version of L\'evy flights, by incorporating a form of preferential attachment, which predicts that most visited places tend to get even more visits \footnote{The model proposed by Song et al. \cite{song2010modelling} is however a challenge to common sense logic: Most visited places (i.e., home and workplace) are visited at a stable rate, roughly following circadian periods.}. Yet, on the contrary to early models \cite{viswanathan1999optimizing, edwards2007revisiting,song2010modelling,viswanathan2011physics}, proposed explanations by Radicchi et al. \cite{radicchi2012evolution} and Song et al. \cite{song2010modelling} incorporate memory, either through evolutionary forces to optimise online auction strategies (the best strategies survive), or human memory driving routine repeated visits of the same places \cite{gonzalez2008understanding,song2010modelling}, simply because they are remembered to bring resources--financial resources are derived from staying at work, while being at home allows for rest and the rewards of home life).\
+
+
+
+\subsection{L\'evy Flight / CTRW}
+We first find that the search process approximately follows a continuous time L\'evy flight process, where waiting times between moves are random variables.  Both the distributions of displacement (Figure \ref{fig:pdfs}A ) and waiting times (Figure \ref{fig:pdfs}B ) are best described by power law distributions  (Probability density function of displacement $pdf(\Delta r) = \Delta r^{-\alpha -1}$ with $\alpha = 0.40(5)$.  Note that this is NOT a L\'evy flight (for which $\alpha$ would have to be between 1 and 3.  {\bf B.} Probability density function of waiting time $\Delta t$ $pdf(\Delta t) = \Delta t^{-\beta -1}$ with 2 regimes : $\beta_{\Delta t < 125} = 0.38(4)$ and $\beta_{\Delta t > 125} = 1.59(5)$. Distributions of $\Delta r$ and $\Delta t$ are equivalent for the simple and complex treatments.)
+
+{\bf Problem :} Such CTRW process are generally expected to follow ballistic diffusion characterized by mean square displacement (MSD) and diffusion $\sim t^{\mu}$ with  $\mu_{Levy} = 1$ \
+or super-diffusion $\mu_{CTRW} = \beta$ \cite{21,23}). Here, however, mean square displacement (MSD) decays as $\sim t^{\mu}$ with $\mu_{simple} =-0.23(2)$ and $\mu_{complex} =-\
+ 0.26(1)$ showing a much slower convergence than is generally expected.
+
+
 
 \begin{figure}[h!]
 \begin{center}
-%\includegraphics[width=16cm]{figures/Figure1.eps}
-\caption{\footnotesize{{\bf A.} return to previously visited sites : $\mathrm{pdf}(V_r) \sim {V_r}^{- \gamma -1}$, with $\gamma_{simple} = 1.6(1)$ and $\gamma_{complex} = 1.5(1)$ $\rightarrow$ tendency to return to previously visited sites : This goes against the imperative to visit new sites (maximize $S_T$) in order to reduce $D_{min}$ (c.f. Figures \ref{fig:Dmin_vs_St}B and \ref{fig:Dmin_vs_St}C). Moreover, given the size of the parameter space [the simplex of dimension $10^{8}$ (resp. $10^{16}$) in the simple (resp. complex) case], it is remarkable that participants tend to return to exactly the same infinitesimal spots in this space. This suggest memory dependent stickiness. {\bf B.} Influence of a model proposed at some time, $t$ in subsequent models at some $t +s$, with $s \geq 1$. The influence is computed as 1/distance between the focal model and subsequent models. On average over all participants in each treatment, influence $I$ decays as $I \sim t^{-\chi}$ with $\chi = 0.48(2)$ ($p < 0.01$ and $R > 0.32$). This result shows that the importance of a memory decays slowly, with implications for the convergence of beliefs to the processes that are the content of those beliefs.}}
-\label{fig:3}
+\includegraphics[width=17cm]{figures/figure1.eps}
+\caption{\footnotesize{{\bf A.} Average Jensen-Shannon Distance $\langle D \rangle$ decays as a function of time as $\sim t^{\nu}$ with $ \nu \approx -0.15(1)$ indicating a very slow convergence to the true model {\bf [indicate $t_0$s and what their values may mean]}. {\bf B.} Probability density function of displacement $pdf(\Delta r) = \Delta r^{-\alpha -1}$ with $\alpha = 0.40(5)$ with a cut-off limited by the largest possible displacement, which is $\sqrt{k}$ with $k$ the number of conditional probabilities to evaluate. {\bf C.}  Probability density function of waiting time $\Delta t$ $pdf(\Delta t) = \Delta t^{-\beta -1}$ with 2 regimes : $\beta_{\Delta t < 125} = 0.38(4)$ and $\beta_{\Delta t > 125} = 1.59(5)$. Distributions of $\Delta r$ and $\Delta t$ are equivalent for the simple and complex treatments.}}
+\label{fig:1}
 \end{center}
 \end{figure}
 
-\subsection{Cognitive Processing Times \& Long-Memory Process}
 
-%{\bf [waiting times? ]}
+
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=16cm]{figures/Dmin_vs_St.eps}
+\caption{{\bf A.} Minimum Euclidian distance $D_{min}$ (between the best model and the true model) exhibits a scaling as a function of the number of distinct sites visited $S_{T}$. $D_{min} \sim S_{T}^{\gamma}$ with resp. $\gamma_{simple} = -0.20(4)$ and $\gamma_{complex} = - 0.13(3)$. {\bf B.}  The number of visited sites over time $S_t$ is a linear function of time $t$. Hence, the number of distinct visited sites is a predictor of the minimum distance $D_{min}$ achieved. The result also holds for average distance. {\bf C.}  Mean square displacement (MSD) decays as $\sim t^{\mu}$ with $\mu_{simple} =-0.23(2)$ and $\mu_{complex} =- 0.26(1)$ showing a slow convergence (on the contrary of a normal L\'evy flight / CTRW, which is characterized by respectively diffusion $\mu_{Levy} = 1$ or super-diffusion $\mu_{CTRW} = \beta$ \cite{21,23}). All colored areas show the 25th percentile confidence intervals.}
+\label{fig:Dmin_vs_St}
+\end{center}
+\end{figure}
+
+
+\subsection{Explore versus Exploit}
+
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=18cm]{figures/EE.eps}
+\caption{{\bf A.} Explore / Exploit ($EE$ )as a function of displacement $\Delta r$. {\bf B.} $\Delta D_{jsd}$ as a function Explore / Exploit: Improvement seems better for $EE \approx 1.4$. {\bf C.} $D_{jsd}$ as a function of $EE$: As distance gets smaller, a balance around $EE = 1$ seems to be reached.}
+\label{fig:pdf_return}
+\end{center}
+\end{figure}
+
+
+\subsection{Memory, Return to previously visited sites \& Recombination}
+For both experimental treatments of the Bayesian network reverse engineering experiment \cite{castnerForthcoming}, participants made use of various time scales of memory as they returned to previous model iterations, following a power law (see Figure \ref{fig:2}A and SI \ref{solutionspace_partitions} for details on solution space partitioning).\\
+
+%\begin{figure}[h!]
+%\begin{center}
+%%\includegraphics[width=16cm]{figures/Figure1.eps}
+%\caption{\footnotesize{{\bf A.} return to previously visited sites : $\mathrm{pdf}(V_r) \sim {V_r}^{- \gamma -1}$, with $\gamma_{simple} = 1.6(1)$ and $\gamma_{complex} = 1.5(1)$ $\rightarrow$ tendency to return to previously visited sites : This goes against the imperative to visit new sites (maximize $S_T$) in order to reduce $D_{min}$ (c.f. Figures \ref{fig:Dmin_vs_St}B and \ref{fig:Dmin_vs_St}C). Moreover, given the size of the parameter space [the simplex of dimension $10^{8}$ (resp. $10^{16}$) in the simple (resp. complex) case], it is remarkable that participants tend to return to exactly the same infinitesimal spots in this space. This suggest memory dependent stickiness. {\bf B.} Influence of a model proposed at some time, $t$ in subsequent models at some $t +s$, with $s \geq 1$. The influence is computed as 1/distance between the focal model and subsequent models. On average over all participants in each treatment, influence $I$ decays as $I \sim t^{-\chi}$ with $\chi = 0.48(2)$ ($p < 0.01$ and $R > 0.32$). This result shows that the importance of a memory decays slowly, with implications for the convergence of beliefs to the processes that are the content of those beliefs.}}
+%\label{fig:3}
+%\end{center}
+%\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=10cm]{figures/schematic_displacement.eps}
+\caption{2-dimensional schematic description of the {\it L\'evy flying mind} model ({\bf ``Proportional Attraction"}): At each time step, the individual must choose between remaining in the solution envelope that has already been explored and exploring outside the currently known solution envelope.  We assign some probability $p$ (a number between 0 and 1) to the participant's decision of staying in the explored envelop and probability $1-p$ to the decision to explore outside that envelop.  If it is harder to find solutions that offer a balanced re-combination of previous solutions than to think out-of-the-box and propose solutions outside of the current solution envelope, then $p < \frac{1}{2}$ else $p \geq \frac{1}{2}$.}
+\label{fig:schematic}
+\end{center}
+\end{figure}
+
+
+
+
+``cognitive load"
+
+{\bf [waiting times? ]}
 
 Memory plays a central role in recombining multiple previously explored models into new ones. We find strong influence of a focal model on subsequent models. On average over all participants in each treatment, influence $I$ decays as $I \sim t^{-\chi}$ with $\chi = 0.48(2)$ ($p < 0.01$ and $R > 0.32$)  (Figure \ref{fig:2}B). Because the time decay exhibits a power law with exponent $\chi < 1$, on average, models proposed in the past never vanish from memory, and may be reused or inspire future models. If we assume that the rate of proposed models remains roughly constant  over time for some participant, as time passes it gets statistically harder to come up with novel solutions ``because mental constructions are imprinted by past experience'' and the cognitively low hanging fruits as well as all of their combinations are being used up, leaving less and less intuitive solutions in the unexplored space of models. Often--as in the Monty Hall example--the true processes of stochastic influence and their observational consequences are highly counter-intuitive.  
 
 
-\subsection{Recombination of previously proposed solutions}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=15cm]{figures/memory.eps}
+\caption{{\bf A.} Influence of a model proposed at time in subsequent models. The influence is computed as 1/distance between the focal model and subsequent models. On average over all participants in each treatment, influence $I$ decays as $I \sim t^{-\chi}$ with $\chi = 0.48(2)$ ($p < 0.01$ and $R > 0.32$). This result shows that memory is a long memory process, with implications for the convergence to. {\bf B.} Return to previously visited sites : $\mathrm{pdf}(V_r) \sim {V_r}^{- \gamma -1}$, with $\gamma_{simple} = 1.6(1)$ and $\gamma_{complex} = 1.5(1)$ $\rightarrow$ tendency to return to previously visited sites : This goes against the imperative to visit new sites (maximize $S_T$) in order to reduce $D_{min}$ (c.f. Figures \ref{fig:Dmin_vs_St}B and \ref{fig:Dmin_vs_St}C). Moreover, given the large number of sites [$10^{8}$ (resp. $10^{16}$) in the simple (resp. complex) case], it is remarkable that participants tend to return to exactly the same (tiny) spots. This suggest some stickiness of memory. {\bf C.}  Schematic representation of remix dynamics. The color bars show the proportion (i.e., $1/d$) of previously proposed solutions in solution proposed at time $t$. New colors are introduced 	tosignal exploration. From time to time, individuals return to previously visited solutions (signaled by $r$).}
+\label{fig:pdf_return}
+\end{center}
+\end{figure}
+
+\subsubsection{Implications of Memory and Exploration on Performance}
+Individuals deploy {\it exploration}, {\it exploitation}, and {\it return} strategies in order to get closer to the best solutions (i.e., factorizations of the joint distribution that are indistinguishable from the true model). Each move may lead to improvement (i.e., reduction of cognitive distance to the true model) or, on the contrary, to dis-improvement. 
+
+We find that displacement has an influence on improvement. As one could surmise, small displacements can only bring marginal improvement, while larger displacements bring more opportunities for improvement, yet at the cost of potential short-term losses that may be quite large. Large displacements ($\Delta r > 0.2$) can bring rather negative performance. Figure \ref{fig:vs_dr} shows the evolution of the distance to the true model $D$ as a function of displacement $\Delta r$. The distance scales as $D \sim {\Delta r}^{\mu}$ with $\mu_{simple} = 0.88(1)$ [resp. $\mu_{complex} = 082(2)$]. For $\Delta r > 0.2$, $D$ uncertainty quickly balloons, but rather positive, reflecting the {\it cost} of making ``wild'' innovations. 
+
+There is no clear relation between time spent on taking the decision to move and performance {\bf [show $\Delta D_{jsd}$ versus $\Delta t$] if relevant: question here is the functional form of how time spent on cognitive processing leads to better or worse results.}.
+
+While there is no clear relation between time spent between moves and performance {\bf [$\Delta D_{jsd}$ versus $\Delta t$]}, the decision to make a larger displacement takes more time. For $\Delta r < 0.2$, the processing time before a displacement decision is made scales as $\Delta t \sim \Delta r^{\gamma}$ with $\gamma_{simple} = 0.11(1)$ [resp. $\gamma_{complex} = 0.13(1)$]. For $\Delta r > 0.2$, the processing times before a displacement decision is taken get disproportionally long (up to tens of seconds on average for a displacement of 0.7 (i.e., $\approx 25\%$ of the maximum displacement distance). On both panels, blue and red areas show the $25^{th}$ percentile confidence intervals.
+
+
+The minimum distance $D_{min}$ (between the best model and the true model) exhibits a scaling as a function of the number of distinct sites visited $S_{T}$. $D_{min} \sim S_{T}^{\gamma}$ with resp. $\gamma_{simple} = -0.20(4)$ and $\gamma_{complex} = - 0.13(3)$. {\bf C.} The logarithm of number of visited sites is a linear function of the logarithm of time $t$. Hence, the number of distinct visited sites is a predictor of the minimum distance $D_{min}$ achieved at time $t$. The result also holds for groupings with averaged cognitive distances.
+
+
+\subsubsection{Recombination of previously proposed solutions}
 
 {\bf Depending on the questions at stake, one must factor human timing either as delayed reactions to externally timed external events, or as part of cognitive processing, or both. We hold the timing of observed events constant in an experimental setting and we are interested in the processes of the mind.}
 
 Recombination of past proposed models accounts for XX\% of moves, and yields on average  YY\% performance. It is a fine-tuning optimization search within the already explored solution envelop.
 
 
-\subsection{Exploration of solutions beyond the convex hull}
+\subsubsection{Exploration of solutions beyond the convex hull}
 We are interested in proposed models, which go beyond the solution space (convex hull) known at iteration $i$. If twice $\langle D_{jsd,i} \rangle$, the average distance of solution $j$ compared to all previous solutions $i < j$, is larger than $ max(D_{jsd})$ the maximum distance between 2 solutions in $iterations = \{1,...,i\}$, then the new proposed model {\it {\bf incorporates causal hypotheses and conditional independence assumptions, which are not entailed by previously explored models}} and contributes to the enlargement of the currently explored joint-hypotheses space. To measure how much a proposed model is explorative, versus exploitative of causal and conditional independence structures, we define the ratio:
 
 \begin{equation}
@@ -37,288 +146,17 @@ For $EE < 1$, the individual is choosing an exploitative solution, that lies wit
 
 An exact equilibrium path of allocation between exploitation and exploration could be worked out, that logically should start with maximum and speedy exploration of the space--exactly as speedily as hypotheses can be tested with new observations and not speedier.  This speedy exploration should be the policy in the beginning, when the mental state is complete ignorance.  The game should end in coming as close as possible to understanding the process, such that any risk of further exploration is no longer worth the expected life-time benefits and exploration should completely stop. This is the time when optimization should be completely exploitative fine-tuning.    
  
-\section{Implications of Memory and Exploration on Performance}
-Individuals deploy {\it exploration}, {\it exploitation}, and {\it return} strategies in order to get closer to the best solutions (i.e., factorizations of the joint distribution that are indistinguishable from the true model). Each move may lead to improvement (i.e., reduction of cognitive distance to the true model) or, on the contrary, to dis-improvement. 
 
-We find that displacement has an influence on improvement. As one could surmise, small displacements can only bring marginal improvement, while larger displacements bring more opportunities for improvement, yet at the cost of potential short-term losses that may be quite large. Large displacements ($\Delta r > 0.2$) can bring rather negative performance. Figure \ref{fig:vs_dr} shows the evolution of the distance to the true model $D$ as a function of displacement $\Delta r$. The distance scales as $D \sim {\Delta r}^{\mu}$ with $\mu_{simple} = 0.88(1)$ [resp. $\mu_{complex} = 082(2)$]. For $\Delta r > 0.2$, $D$ uncertainty quickly balloons, but rather positive, reflecting the {\it cost} of making ``wild'' innovations. 
+\subsection{Importance of Time}
 
-There is no clear relation between time spent on taking the decision to move and performance {\bf [show $\Delta D_{jsd}$ versus $\Delta t$] if relevant: question here is the functional form of how time spent on cognitive processing leads to better or worse results.}.
-
-While there is no clear relation between time spent between moves and performance {\bf [$\Delta D_{jsd}$ versus $\Delta t$]}, the decision to make a larger displacement takes more time. For $\Delta r < 0.2$, the processing time before a displacement decision is made scales as $\Delta t \sim \Delta r^{\gamma}$ with $\gamma_{simple} = 0.11(1)$ [resp. $\gamma_{complex} = 0.13(1)$]. For $\Delta r > 0.2$, the processing times before a displacement decision is taken get disproportionally long (up to tens of seconds on average for a displacement of 0.7 (i.e., $\approx 25\%$ of the maximum displacement distance). On both panels, blue and red areas show the $25^{th}$ percentile confidence intervals.
-
-
-%{\bf [show $\Delta D_{jsd}$ versus Explore and Exploit]}
-
-%Influence of ``explorative" solutions versus ``exploitative" solutions ?
-
-%Influence of moves that improve scores rather than those that don't ?
-
-%How does ``time in the game'' factor in?
-
-The minimum distance $D_{min}$ (between the best model and the true model) exhibits a scaling as a function of the number of distinct sites visited $S_{T}$. $D_{min} \sim S_{T}^{\gamma}$ with resp. $\gamma_{simple} = -0.20(4)$ and $\gamma_{complex} = - 0.13(3)$. {\bf C.} The logarithm of number of visited sites is a linear function of the logarithm of time $t$. Hence, the number of distinct visited sites is a predictor of the minimum distance $D_{min}$ achieved at time $t$. The result also holds for groupings with averaged cognitive distances.
-
-%\section{Results (old)}
-%
-%Figure \ref{fig:schematic} shows the three possible choices made by individuals:
-%
-%\begin{itemize}
-%  \item {\bf explore} : in that case, the individual will search for new solutions outside the convex hull of the currently known solution space (i.e., the (hyper-)surface defined by all already visited solutions. 
-%  \item {\bf exploit} : individuals {\it remix} $p < n$ already visited solutions into the $n$-th solution.
-%  \item {\bf return} : with some probability an individual may return to a previously visited site. 
-%\end{itemize}
-%
-%
-%
-%%\subsection{$\Delta$ score as a function of displacement}
-%%
-%%Figure \ref{fig:vs_dr}A: Evolution of the distance to the true model $D$ as a function of displacement $\Delta r$. The distance scales as $D \sim {\Delta r}^{\mu}$ with $\mu_{simple} = 0.88(1)$ [resp. $\mu_{complex} = 082(2)$]. For $\Delta r > 0.2$, $D$ becomes quickly highly uncertain, but rather positive, reflecting the {\it cost} of the making ``wild"displacements. 
-%%
-%%\subsection{Waiting Time as a function of displacement}
-%%
-%%Figure \ref{fig:vs_dr}B: For $\Delta r < 0.2$, the waiting time before a displacement decision is made scales as $\Delta t \sim \Delta r^{\gamma}$ with $\gamma_{simple} = 0.11(1)$ [resp. $\gamma_{complex} = 0.13(1)$]. For $\Delta r > 0.2$, the waiting time before a displacement decision is taken get disproportionally long (up to tens of seconds on average for displacement of 0.7 (i.e., $\approx 25\%$ of the maximum displacement distance). 
-%
-%
-%
-%\subsection{Dynamics Formulation of Exploration/Exploitation}
-%
-%Now, one may consider that making one ``bad move" (with arguably large displacement) may not be immediately beneficial, but rather help on the long term, through a process of exploration (with no yield), followed by some efficient exploitation (when improvements are performed).
-%
-%For that, one may consider how past solutions influence newer, and how this promotes performance, or not. A special attention should be paid to (i) exploration and (ii) return. In the latter case, we shall try to determine whether returning is the acknowledgement of a dead-end (in that case return should bring sustainable improvement), or whether it is less rational (e.g., some kind of cognitive stickiness).
-%
-%To capture the exogenous contribution of new solution exploration and the endogenous contributions of exploitation of previous solutions.
-%
-%{\bf [here, explain why a DISCRETE Process is relevant: One could think of discrete neural net firing, which translates into an intensity of activity. Another explanation is more far-fetched by saying that Hawkes processes capture well human activity, which in turn stems from human intelligence and cognition.]}
-%
-%The dynamics of exploration versus exploitation can be captured together by a generic cascade process, which is well described by the excited  Hawkes conditional Poisson process \cite{hawkes1974acluster}.
-%The Hawkes process typically captures well a variety of social dynamics involving complex human interactions such as online viral meme propagation \cite{crane2008}, gangs and crime in large American cities \cite{mohler2011}, cyber crime \cite{baldwin2012} and financial contagion \cite{ait-sahalia2010,filiminov2012,filiminov2014}.  
-%The Hawkes process is defined by the intensity $I(t)$ of events (commits) given by
-%\be
-%I(t)= \lambda(t) + \sum_{i | t_t<t}  f_i \phi(t-t_i)~,
-%\label{jruym}
-%\ee
-%where $\{t_i, i=1, 2, ...\}$ are the timestamps of past proposed solutions, $\lambda(t)$ is the spontaneous
-%exogenous generation of new solutions (i.e., exploration), $f_{i}$ is the 
-%fertility of solution $i$ that quantifies the number of offsprings (of first generation)
-%that it can potentially trigger directly, and $ \phi(t-t_i)$ is the memory kernel, whose
-%integral is normalized to $1$, which weights how 
-%much past solutions influence future ones. $\phi$ relates to the decay of influence $I$ as $I \sim t^{-\chi}$ with $\chi = 0.48(2)$ ($p < 0.01$ and $R > 0.32$). This result shows a long memory process (see Figure \ref{fig:memory}), with implications for the convergence to the solution (see Figure \ref{fig:vs_dr}A). 
-%
-%
-%%typically reflects how tasks are prioritized and performed by individuals according to a rational economy where time is a non storable resource \cite{maillart2011}. 
-%Expression (\ref{jruym}) expresses that the current solution elaborated between $t$ and $t+dt$
-%results from two sources: (i) an exogenous source $\lambda(t) dt$ representing exploration not related
-%to previous solutions; (ii) an endogenous term represented by the sum over all past solutions that were 
-%made prior to $t$, and which are susceptible to trigger future solutions (i.e., exploitation). 
-%
-%The Hawkes model is the simplest conditional Poisson process that combines both exogeneity and
-%endogeneity. The class of Hawkes models can be mapped onto the general class of branching processes \cite{daley2007}. 
-%The statistical average fertility $\langle f_i \rangle$ defines the branching ratio $n$, which is the key
-%parameter. For $n<1$, $n=1$ and $n>1$, the process is respectively sub-critical, critical and super-critical \cite{helmstetter2002subcritical,helmstetter2003}.
-%
-%A schematic representation of the process at work is shown on Figure \ref{fig:schematic_remix}
-%
-%Figure \ref{fig:memory} : Influence of a model proposed at time in subsequent models. The influence is computed as $1/D$ between the focal model and subsequent models. If we consider a network with focal node $i$ (i.e., the newest solution) with edges of some length connecting to other nodes (i.e., past proposed solutions), then influence of the latter on the former, may be considered as weighted edges, with edge weight $= 1/D_{i,j}$ .
-%
-%
-%
-%In a nutshell, there are 2 somehow distinct discrete processes:
-%
-%\begin{itemize}
-%  \item the discrete process of proposing a new solution: the waiting times between two propositions may relate to some information processing time by the mind.
-%  \item the discrete process of blending exploration of new solutions with the exploitation of past proposed solutions: This blend may be seen as past solutions ``firing" repeatedly in the mind. The repeated firing shall translate into an intensity. This intensity is assumed to be proportional to the distance between the focal solution $i$ and past solutions $j$. In other words, the more a past solution $j$ ``fires" in the mind, the more likely the new solution $i$ will be close to  $j$. One may assume that firing occurs as the individual prepares her next solution, i.e., between solutions $i-1$ and $i$. \end{itemize}
-%
-%Memory firing 
-%
-%
-%\subsection{Good or bad firing ? Renewal ? Evolutionary pressure?}
-%Firing of past solutions may be positive or negative, depending on the balance between keeping in mind good past solutions (i.e., closer to the true solutions), expansion of the solution space (i.e., exploration), and renewal (i.e., leaving behind / forgetting past unfruitful solutions. 
-%
-%{\bf [We shall analyze this process and try to predict good versus bad performer in that framework.]}
-%
-%
-%\subsection{Brain Processing Time \& Economics of Time}
-%One cannot observe what's going on during these thinking moments, i.e., between two moves. We are left wondering. In foraging, the $\Delta t$ may be connected to travel time, or the time needed to consume resources (interestingly consuming these resources without depleting them completely, apparently). Here, the resource to consume is ``brain processing time", with an overall limited time budget. So individuals must strike a balance between spending time thinking and testing new solutions.  Figures \ref{fig:vs_dr}A and \ref{fig:vs_dr}B suggest that making big -- more risky/uncertain -- moves take more brain processing. 
-%
-%This may relate to Intertemporal choice ? $\rightarrow$ discounted utility / decision theory? It's somehow different because here we examine the process of making a choice: one may see the problem from two possible perspectives : 
-%
-%\begin{enumerate}
-%  \item As individuals delay action, more reshuffling (renewal) occurs, and hence it is more likely that displacement may be greater.
-%  \item Or on the contrary, the agent has for objective to make a large displacement, and she will spend more time looking strategically for a meaningful move (i.e., a non-trivial one that brings together exploration, exploitation and performance).
-%\end{enumerate}
-%
-%{\bf [One may ask whether one or the other apply here ? Can we test either hypothesis ?]}
-%
-%
-%\paragraph{Simple Economics of Time}
-%Now one may think of a simple model of time efficiency. The simple question here is the following: shall an agent make multiple small moves with little expected incremental performance (i.e., Distance reduction) or on the contrary make less moves, yet with more displacement and hence, more expected performance (in less increments).
-%
-%On the one hand, we know that $\Delta D_{jsd} \sim - \Delta r ^{\mu}$ with $\mu \approx 0.85$ for $\Delta r < 0.2$, on the other hand, $\Delta t \sim \Delta r^{\gamma}$ with $\gamma \approx 0.12$, hence $\Delta r \sim \Delta t^{1/\gamma}$ also for $\Delta r < 0.2$.
-%
-%Therefore, 
-%
-%\begin{equation}
-%\Delta D_{jsd} \sim -  \Delta t^{\mu / \gamma} \approx \Delta t^{7.1}~~with~~\Delta r < 0.2~(resp.~\Delta t  < 3)
-%\end{equation}
-%
-%We want to maximize $\sum_{i=1}^{N} \Delta D_{jsd}$, with $N$ being the number of trials, which we want to maximize. Because $\Delta t$ diverges and $\Delta D_{jsd}$ get positive (dis-performance) when $\Delta r > 0.2$, we have the additional constraint $\Delta t  < 3$ seconds. Actually, the best strategy seems to be waiting for around 3 seconds. {\bf [it may look a bit naive $\rightarrow$ may be necessary to enrich the mechanism with e.g., some stochasticity]}.
-%
-%
-%\begin{itemize}
-%  \item {\bf [one may want to check the following prediction: those who wait close to 3 seconds, should perform better. If the prediction is verified, then what remix arrangement(s) occur?]}
-%  \item {\bf [try to explain why beyond $\Delta r > 0.2$ performance get uncertain and on average worse]}
-%\end{itemize}
-%
-%
-%
-%
-%
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=11cm]{figures/vs_dr.eps}
+\caption{{\bf A.} Evolution of the distance to the true model $D$ as a function of displacement $\Delta r$. The distance scales as $D \sim {\Delta r}^{\mu}$ with $\mu_{simple} = 0.88(1)$ [resp. $\mu_{complex} = 082(2)$]. For $\Delta r > 0.2$, $D$ becomes quickly highly uncertain, but rather positive, reflecting the {\it cost} of the making ``wild"displacements. {\bf B} For $\Delta r < 0.2$, the waiting time before a displacement decision is made scales as $\Delta t \sim \Delta r^{\gamma}$ with $\gamma_{simple} = 0.11(1)$ [resp. $\gamma_{complex} = 0.13(1)$]. For $\Delta r > 0.2$, the waiting time before a displacement decision is taken get disproportionally long (up to tens of seconds on average for displacement of 0.7 (i.e., $\approx 25\%$ of the maximum displacement distance). On both panels, blue and red areas show the 25th percentile confidence intervals.}.
+%\caption{Scaling relation between $\Delta t$ and $\Delta r$ for the simple (A) and complex (B) treatments. The functions are similar for both treatments [resp. $\sim 0.44(2)$ ($p < 0.01$ , $r = 0.39$) and $\sim 0.47(2)$ ($p < 0.01$ , $r = 0.36$)]. {\bf Actually, one may see this figure differently : scaling $\Delta t \sim {\Delta r}^{0.2}$ for $\Delta r < 0.2$ and another (unknown) regime for $\Delta r > 0.2$ with waiting time getting disproportionately long $\rightarrow$ This may highlight the processing costs associated with a big jump.}}
+\label{fig:vs_dr}
+\end{center}
+\end{figure}
 
 
-
-%
-%
-%\subsection{Exploration}
-%The exploration process involves visiting new sites and ensuring an efficient covering the problem space. We observe that the exploration pattern alternates local search and long-range jumps. This strategy is reminiscent of food (resp. resource) search {\it L\'evy flight} strategies followed by animals \cite{viswanathan1996levy,ramos2004levy,reynolds2007displaced} and by hunter-gatherers \cite{gonzalez2008understanding,song2010modelling,rhee2011levy}, through random search alternating short- and long-distance jumps. 
-%
-%The long jumps reduce the chance that same sites get visited multiple times, while clusters of small jumps help explore locally.
-%
-%The distribution of jump sizes $\Delta r$ is given by, 
-%
-%\begin{equation}
-%P(R > \Delta r) \sim |\Delta r|^{-\alpha}, ~~\mathrm{with}~~\alpha = 0.6().
-%\label{eq:jump_sizes}
-%\end{equation}
-%
-%Since $\alpha = 0.6 < 1$ ($\alpha$ was obtained by maximum likelihood estimation with confidence interval obtained by bootstrapping \cite{maillart,maillart,clauset}), see Figure \ref{fig:jump_sizes}) the process is super-diffusive in space, hence promoting a broad exploration of the problem space (since  $\alpha < 1$ the first (average) and second (variance) statistical moments diverge with realizations $n \rightarrow \infty$, hence ensuring exploration, bounded only by the solution space. The bounded solution space is reflected by the truncation $P(R> \Delta r) = 0$ for $r > 1$ (the theoretical limit is ${\Delta r}_{max} = \sqrt{8} \approx 2.8$).
-%
-%The super-diffusive process in space is counter balanced by the waiting times between L\'evy flight moves. The distribution of waiting times follows a power law distribution given by,
-%
-%\begin{equation}
-%P(T > \Delta t) \sim |\Delta t|^{-\beta}, ~~with~~\beta \approx 0.5,
-%\label{eq:waiting_times}
-%\end{equation}
-%
-%with a change of regime for $\Delta t  > 100$ seconds ($\alpha \approx 1.5$ for $\Delta t > 100$) see Figure \ref{fig:waiting_time}). ($\alpha$ was obtained by adaptive kernel estimation \cite{}. This method (fitting the pdf instead of the cdf) is required to account for the change of regime).
-%
-%
-%The combination of jump sizes (\ref{eq:jump_sizes}) and waiting times (\ref{eq:waiting_times}), qualifies a continuous time random walk (CTRW), which diffusion (mean square displacement MSD) can be predicted to be $\mu = 2\beta / \alpha \approx 1.6$. Since $1< \mu < 2$, the CTRW should be super-diffusive, yet not ballistic (since $\mu > 1$), in case $\Delta r$ and $\Delta t$ are uncorrelated.
-%
-%However, we observe that $MSD \sim t^{\overline{\mu}}$ with $\overline{\mu} = 0.35 < \mu = 1.6$.
-% 
-%Actually, we find that $\Delta t$ and $\Delta r$ exhibit a scaling dependency (see. Figure \ref{fig:corr_dt_vs_dr}),
-%
-%% $\Delta r \approx {\Delta t}^{\gamma}$ with $\gamma_{simple} = 0.23(2)$ ($p < 0.01$, $r > 0.2$ in the {\it simple} treatment; Spearman $\rho = 0.33$ $p < 0.01$, $\gamma_{complex} = 0.15(3)$ with $p < 0.01$, $r > 0.13$, Spearman $\rho = 0.53$ $p < 0.01$).
-%
-%{\bf [$\rightarrow$ how this scaling relation influence diffusion? it should influence negatively, but the right derivation must be worked out]}
-%
-%\paragraph{Montroll-Weiss Equation}
-%
-%\be
-%\rho(k,s) = \rho(k,0) \frac{1 - \phi(s)}{s} \frac{1}{1 -  \Phi(s) \Psi(k)}
-%\ee
-%
-%
-%
-%
-%
-%\subsection{Return to Previous Sites}
-%$\rightarrow$ The scaling dependency between $\Delta r$ and $\Delta t$ does not explain all the the discrepancies observed between $\overline{\mu}$ and $\mu$.
-%
-%We suspect that people ``return" to previously visited site, in a way that is also consistent with observed food hunting strategies \cite{}
-%
-%To determine return to previous solution sites, we consider a grid partition of the solution space in 4 (resp. 16) dimensional space, with $\bar{s_k} = \{0.01,0.02, .., 1\}$ (At this resolution level, the solution space is thus $10^{9}$ sites for the simple Bayesian network (resp. $10^{16}$ sites in the complex treatment). Distance between two sites is measured as $\Delta r_{i,j} = \| \mathbf{s}_j - \mathbf{s}_i \| = \sqrt{\sum_{k=1}^{k=8} (\mathbf{s}_{j,k} - \mathbf{s}_{i,k})^{2}}$ for $k = \{1,..,8\}$ (resp. $k = \{1,..,16\})$. With a $0.01$ grid resolution the maximum error between a proposed model and the true solution is $\epsilon_{\Delta r} = 0.01 \times \sqrt{2} \approx 2.8\%$.\\
-%
-%We observe that the number of new locations visited over time follows
-%
-%\begin{equation}
-%S(t)  \sim t^{\mu},
-%\end{equation}
-%
-%with $\mu \approx 0.7$. This is at odds with typical random search strategies involving long range {\it flights}: for L\'evy flights $\mu = 1$ \cite{} and for Continuous Time Random Walk $\mu = \beta$ \cite{}). 
-%
-%Since $\Delta r$ and $\Delta t$ are un-correlated, the sub-linear scaling visitation of new sites cannot be attributed to increased delays between jumps over time [i.e., $P(\Delta t|t) = P(\Delta t)$]. Similarly, $P(\Delta r|r(t)) = P(\Delta r)$. The only explanation for the convex nature of $S$ is the return to previously visited sites. Figure \ref{} shows the probability distribution of site visitation  $V$, which best described by a power law distribution
-%
-%\begin{equation}
-%P(V > v) \sim v^{-\gamma}
-%\end{equation}
-%
-%with $\gamma \approx 2$. In contrast, the probability $V$ of visitation is expected to be asymptotically ($t \rightarrow \infty$) uniform (P(V) ~ const.)\\
-%
-%
-%\subsection{Convergence}
-%We find that the Euclidian distance between a proposed Bayesian network (the {\it model} thereafter) and the true Bayesian network (the {\it solution}), decays on average as, 
-%
-%\begin{equation}
-%\langle D(t) \rangle  \sim t^{-\nu},
-%\end{equation}
-%
-%with $\nu_{simple} = 0.149(2)$ and $\nu_{complex} = 0.162(2)$ ( $p < 0.01$, $r^2 > 0.7$) (see Figure \ref{fig:decay}). Since $\nu \ll 1$, the distance between the model and the solution converges extremely slowly. By extrapolation, it would take 7 days to ensure $\langle D \rangle < 0.1$ [one realization (i.e., one participant) may however reach that threshold, but it remains unclear whether if it would be a matter of chance or the result of a better search strategy]. Given the size of the problem space (see above), and the solution sparsity in this space (there is indeed only one possible solution), one shall expect a slow convergence on average. 
-%
-%\subsection{Positive/Negative implications of return to previously visited sites}
-%
-%return to previously visited sites may be helpful to return to previously better solution
-%
-%
-%\subsection{Exploration versus Exploitation}
-%
-%
-%
-%\subsection{Implications of waiting times with change of regime: cascades ?}
-%
-%
-
-
-%
-%\subsection{Ultra Slow Diffusion / Power Law Decay}
-%
-%The Continuous Time Random Walk Model (CTRW) of solution search predicts that the mean square displacement (MSD) of a person's model from the stochastic properties of the real system asymptotically follows $\langle \Delta x^2 (t) \rangle \sim t^{\nu}$ with $\nu = 2\beta /\alpha$. 
-%
-%\begin{equation}
-%\label{power_law_decay}
-%CD(t) = C \cdot t^{-\alpha},
-%\end{equation}
-%
-%where we estimate from our experimental data that $\alpha = 0.09$ and we find that $C$ is a constant which depends on the system that people make their inferences about; in our case, the $simple$ and $complex$ treatments. 
-%
-%\begin{equation}
-%\label{ultraslowdiffusion}
-%S(t) = 1 - CD(t) = 1- C \cdot t^{-\alpha},
-%\end{equation}
-%
-%
-%\subsubsection{Stepwise Jumps}
-%
-%\begin{equation}
-%P(R > \Delta r) \sim |\Delta r|^{-\alpha}, ~~with~~\alpha \approx 0.1,
-%\end{equation}
-%
-%jump size $\Delta r$ Figure \ref{fig:jump_sizes}
-
-
-%\section{Theory and Findings}
-%
-%\subsection{Ultra Slow Diffusion / Power Law Decay}
-%
-%The Continuous Time Random Walk Model (CTRW) of solution search predicts that the mean square displacement (MSD) of a person's model from the stochastic properties of the real system asymptotically follows $\langle \Delta x^2 (t) \rangle \sim t^{\nu}$ with $\nu = 2\beta /\alpha$. 
-%
-%\begin{equation}
-%\label{power_law_decay}
-%CD(t) = C \cdot t^{-\alpha},
-%\end{equation}
-%
-%where we estimate from our experimental data that $\alpha = 0.09$ and we find that $C$ is a constant which depends on the system that people make their inferences about; in our case, the $simple$ and $complex$ treatments. 
-%
-%\begin{equation}
-%\label{ultraslowdiffusion}
-%S(t) = 1 - CD(t) = 1- C \cdot t^{-\alpha},
-%\end{equation}
-%
-%
-%\subsubsection{Stepwise Jumps}
-%
-%\begin{equation}
-%P(R > \Delta r) \sim |\Delta r|^{-\alpha}, ~~with~~\alpha \approx 0.1,
-%\end{equation}
-%
-%jump size $\Delta r$ Figure \ref{fig:jump_sizes}
 
